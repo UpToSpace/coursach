@@ -1,0 +1,15 @@
+D:\University\coursach\MyLove\MyLove\bin\Debug\MyLove.exe.config
+D:\University\coursach\MyLove\MyLove\bin\Debug\MyLove.exe
+D:\University\coursach\MyLove\MyLove\bin\Debug\MyLove.pdb
+D:\University\coursach\MyLove\MyLove\obj\Debug\MyLove.csproj.AssemblyReference.cache
+D:\University\coursach\MyLove\MyLove\obj\Debug\MainWindow.g.cs
+D:\University\coursach\MyLove\MyLove\obj\Debug\App.g.cs
+D:\University\coursach\MyLove\MyLove\obj\Debug\MyLove_MarkupCompile.cache
+D:\University\coursach\MyLove\MyLove\obj\Debug\MyLove_MarkupCompile.lref
+D:\University\coursach\MyLove\MyLove\obj\Debug\MainWindow.baml
+D:\University\coursach\MyLove\MyLove\obj\Debug\MyLove.g.resources
+D:\University\coursach\MyLove\MyLove\obj\Debug\MyLove.Properties.Resources.resources
+D:\University\coursach\MyLove\MyLove\obj\Debug\MyLove.csproj.GenerateResource.cache
+D:\University\coursach\MyLove\MyLove\obj\Debug\MyLove.csproj.CoreCompileInputs.cache
+D:\University\coursach\MyLove\MyLove\obj\Debug\MyLove.exe
+D:\University\coursach\MyLove\MyLove\obj\Debug\MyLove.pdb
