@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище coursachModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admins">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="char" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <EntityType Name="answers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="text" Type="varchar" MaxLength="100" />
+    <Property Name="points" Type="int" />
+  </EntityType>
+  <EntityType Name="description">
+    <Key>
+      <PropertyRef Name="points" />
+    </Key>
+    <Property Name="points" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="era">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="char" MaxLength="20" />
+    <Property Name="questions" Type="int" />
+    <Property Name="description" Type="char" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="orders">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="era" Type="int" />
+  </EntityType>
+  <EntityType Name="questions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="char" MaxLength="50" />
+    <Property Name="answer" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="char" MaxLength="40" Nullable="false" />
+    <Property Name="order_" Type="int" />
+  </EntityType>
+  <Association Name="FK__answers__points__3C69FB99">
+    <End Role="description" Type="Self.description" Multiplicity="0..1" />
+    <End Role="answers" Type="Self.answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="description">
+        <PropertyRef Name="points" />
+      </Principal>
+      <Dependent Role="answers">
+        <PropertyRef Name="points" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__era__questions__4222D4EF">
+    <End Role="questions" Type="Self.questions" Multiplicity="0..1" />
+    <End Role="era" Type="Self.era" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="questions">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="era">
+        <PropertyRef Name="questions" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__orders__era__44FF419A">
+    <End Role="era" Type="Self.era" Multiplicity="0..1" />
+    <End Role="orders" Type="Self.orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="era">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="orders">
+        <PropertyRef Name="era" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__questions__answe__3F466844">
+    <End Role="answers" Type="Self.answers" Multiplicity="0..1" />
+    <End Role="questions" Type="Self.questions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="answers">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="questions">
+        <PropertyRef Name="answer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__users__order___47DBAE45">
+    <End Role="orders" Type="Self.orders" Multiplicity="0..1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="orders">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="order_" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище coursachModelContainer">
+    <EntitySet Name="admins" EntityType="Self.admins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="answers" EntityType="Self.answers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="description" EntityType="Self.description" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="era" EntityType="Self.era" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="orders" EntityType="Self.orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="questions" EntityType="Self.questions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__answers__points__3C69FB99" Association="Self.FK__answers__points__3C69FB99">
+      <End Role="description" EntitySet="description" />
+      <End Role="answers" EntitySet="answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__era__questions__4222D4EF" Association="Self.FK__era__questions__4222D4EF">
+      <End Role="questions" EntitySet="questions" />
+      <End Role="era" EntitySet="era" />
+    </AssociationSet>
+    <AssociationSet Name="FK__orders__era__44FF419A" Association="Self.FK__orders__era__44FF419A">
+      <End Role="era" EntitySet="era" />
+      <End Role="orders" EntitySet="orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__questions__answe__3F466844" Association="Self.FK__questions__answe__3F466844">
+      <End Role="answers" EntitySet="answers" />
+      <End Role="questions" EntitySet="questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__users__order___47DBAE45" Association="Self.FK__users__order___47DBAE45">
+      <End Role="orders" EntitySet="orders" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
