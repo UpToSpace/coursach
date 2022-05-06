@@ -41,7 +41,11 @@
                 Header="About"
                 Style="{DynamicResource TabItem}"/>
             <TabItem Header="Profile"
-                     Style="{DynamicResource TabItem}"/>
+                     Style="{DynamicResource TabItem}">
+                <Frame x:Name="ProfileFrame">
+                </Frame>
+            </TabItem>
+
             <TabItem Header="Settings"
                      Style="{DynamicResource TabItem}">
                 <Grid>
@@ -70,14 +74,55 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         Text="{DynamicResource ChangeLanguage}" />
+                    <StackPanel
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                        <Button
+                            Width="50"
+                            Height="50"
+                            Margin="5"
+                            Background="#000"
+                            Command="{Binding ChangeLanguageCommand}"
+                            CommandParameter="EN"/>
+                        <Button
+                            Width="50"
+                            Height="50"
+                            Margin="5"
+                            Background="#fff"
+                            Command="{Binding ChangeLanguageCommand}"
+                            CommandParameter="RU"/>
+                    </StackPanel>
                     <TextBlock
                         Grid.Column="1"
                         Grid.Row="1"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         Text="{DynamicResource ChangeTheme}" />
+                    <StackPanel
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                        <Button
+                            Width="50"
+                            Height="50"
+                            Margin="5"
+                            Background="#000"
+                            Command="{Binding ChangeThemeCommand}"
+                            CommandParameter="Dark"/>
+                        <Button
+                            Width="50"
+                            Height="50"
+                            Margin="5"
+                            Background="#fff"
+                            Command="{Binding ChangeThemeCommand}"
+                            CommandParameter="Light"/>
+                    </StackPanel>
                 </Grid>
             </TabItem>
+            
         </TabControl>
     </Grid>
 </Window>

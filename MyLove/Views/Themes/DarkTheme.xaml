@@ -48,4 +48,8 @@
     <Style TargetType="{x:Type TextBlock}">
         <Setter Property="Foreground" Value="#fff" />
     </Style>
+
+    <Style x:Key="ComboBoxItem" TargetType="ComboBoxItem">
+        <Setter Property="Background" Value="#FF8474" />
+    </Style>
 </ResourceDictionary>

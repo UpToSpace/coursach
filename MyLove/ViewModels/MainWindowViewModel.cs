@@ -20,16 +20,18 @@ namespace MyLove.ViewModels
 
         }
 
+        #region Change Theme
+
         public ICommand ChangeThemeCommand { get; }
         private void OnChangeThemeCommandExecuted(object o)
         {
             string theme = o as string;
             switch (theme)
             {
-                case "light":
+                case "Light":
                     Application.Current.Resources.MergedDictionaries[1].Source = new Uri("./Views/Themes/LightTheme.xaml", UriKind.RelativeOrAbsolute);
                     break;
-                case "dark":
+                case "Dark":
                     Application.Current.Resources.MergedDictionaries[1].Source = new Uri("./Views/Themes/DarkTheme.xaml", UriKind.RelativeOrAbsolute);
                     break;
                 default:
@@ -37,11 +39,33 @@ namespace MyLove.ViewModels
             }
         }
 
+        #endregion
+
+        #region Change Language
+        public ICommand ChangeLanguageCommand { get; }
+        private void OnChangeLanguageCommandExecuted(object o)
+        {
+            string lang = o as string;
+            switch (lang)
+            {
+                case "EN":
+                    Application.Current.Resources.MergedDictionaries[2].Source = new Uri("./Views/Languages/En.xaml", UriKind.RelativeOrAbsolute);
+                    break;
+                case "RU":
+                    Application.Current.Resources.MergedDictionaries[2].Source = new Uri("./Views/Languages/Ru.xaml", UriKind.RelativeOrAbsolute);
+                    break;
+                default:
+                    break;
+            }
+        }
+        #endregion
+
 
         public MainWindowViewModel()
         {
             CloseApplicationCommand = new RelayCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecute);
             ChangeThemeCommand = new RelayCommand(OnChangeThemeCommandExecuted);
+            ChangeLanguageCommand = new RelayCommand(OnChangeLanguageCommandExecuted);
         }
     }
 }

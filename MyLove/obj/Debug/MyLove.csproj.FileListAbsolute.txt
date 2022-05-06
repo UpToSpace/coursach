@@ -81,7 +81,6 @@ D:\University\coursach\MyLove\MyLove\bin\Debug\EntityFramework.xml
 D:\University\coursach\MyLove\MyLove\bin\Debug\EntityFramework.SqlServer.xml
 D:\University\coursach\MyLove\MyLove\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 D:\University\coursach\MyLove\MyLove\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-D:\University\coursach\MyLove\MyLove\obj\Debug\MyLove_Content.g.cs
 D:\University\coursach\MyLove\MyLove\obj\Debug\Views\Themes\BaseTheme.baml
 D:\University\coursach\MyLove\MyLove\obj\Debug\Views\Themes\DarkTheme.baml
 D:\University\coursach\MyLove\MyLove\obj\Debug\Views\Themes\LightTheme.baml

@@ -44,4 +44,8 @@
         <Setter Property="Background" Value="#A4A0DA" />
         <Setter Property="Foreground" Value="#000" />
     </Style>
+
+    <Style x:Key="ComboBoxItem" TargetType="ComboBoxItem">
+        <Setter Property="Background" Value="#FAC439" />
+    </Style>
 </ResourceDictionary>
