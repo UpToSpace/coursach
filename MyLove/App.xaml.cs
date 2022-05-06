@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MyLove.Infrastructure.Stores;
+using MyLove.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +15,20 @@ namespace MyLove
     /// </summary>
     public partial class App : Application
     {
+        private readonly NavigationStore navigationStore;
+        public App()
+        {
+            navigationStore = new NavigationStore();
+        }
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            navigationStore.CurrentViewModel = new LoginViewModel(navigationStore);
+            MainWindow = new MainWindow()
+            {
+                DataContext = new MainWindowViewModel(navigationStore)
+            };
+            MainWindow.Show();
+            base.OnStartup(e); 
+        }
     }
 }

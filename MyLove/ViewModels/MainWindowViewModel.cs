@@ -1,4 +1,5 @@
 ﻿using MyLove.Infrastructure.Commands;
+using MyLove.Infrastructure.Stores;
 using MyLove.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,23 @@ namespace MyLove.ViewModels
 {
     internal class MainWindowViewModel : ViewModel
     {
+        private readonly NavigationStore navigationStore;
+        private void OnCurrentViewModelChanged()
+        {
+            OnPropertyChanged(nameof(CurrentViewModel));
+        }
+        public ViewModel CurrentViewModel => navigationStore.CurrentViewModel;
+
+        public MainWindowViewModel(NavigationStore navigationStore)
+        {
+            CloseApplicationCommand = new RelayCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecute);
+            ChangeThemeCommand = new RelayCommand(OnChangeThemeCommandExecuted);
+            ChangeLanguageCommand = new RelayCommand(OnChangeLanguageCommandExecuted);
+
+            this.navigationStore = navigationStore;
+            this.navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
+        }
+
 
         public ICommand CloseApplicationCommand { get; }
         private bool CanCloseApplicationCommandExecute(object o) => true;
@@ -60,12 +78,5 @@ namespace MyLove.ViewModels
         }
         #endregion
 
-
-        public MainWindowViewModel()
-        {
-            CloseApplicationCommand = new RelayCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecute);
-            ChangeThemeCommand = new RelayCommand(OnChangeThemeCommandExecuted);
-            ChangeLanguageCommand = new RelayCommand(OnChangeLanguageCommandExecuted);
-        }
     }
 }

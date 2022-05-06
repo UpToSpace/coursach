@@ -86,3 +86,7 @@ D:\University\coursach\MyLove\MyLove\obj\Debug\Views\Themes\DarkTheme.baml
 D:\University\coursach\MyLove\MyLove\obj\Debug\Views\Themes\LightTheme.baml
 D:\University\coursach\MyLove\MyLove\obj\Debug\Views\Languages\En.baml
 D:\University\coursach\MyLove\MyLove\obj\Debug\Views\Languages\Ru.baml
+D:\University\coursach\MyLove\MyLove\obj\Debug\Views\UserControls\Registration.g.cs
+D:\University\coursach\MyLove\MyLove\obj\Debug\Views\UserControls\Registration.baml
+D:\University\coursach\MyLove\MyLove\obj\Debug\Views\UserControls\Login.g.cs
+D:\University\coursach\MyLove\MyLove\obj\Debug\Views\UserControls\Login.baml
