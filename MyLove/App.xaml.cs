@@ -15,20 +15,43 @@ namespace MyLove
     /// </summary>
     public partial class App : Application
     {
-        private readonly NavigationStore navigationStore;
+        private readonly NavigationStore profileNavigationStore;
+        private readonly NavigationStore catalogNavigationStore;
         public App()
         {
-            navigationStore = new NavigationStore();
+            profileNavigationStore = new NavigationStore();
+            catalogNavigationStore = new NavigationStore();
         }
         protected override void OnStartup(StartupEventArgs e)
         {
-            navigationStore.CurrentViewModel = new LoginViewModel(navigationStore);
+            profileNavigationStore.CurrentViewModel = CreateLoginViewModel();
+            catalogNavigationStore.CurrentViewModel = CreateCatalogViewModel();
             MainWindow = new MainWindow()
             {
-                DataContext = new MainWindowViewModel(navigationStore)
+                DataContext = new MainWindowViewModel(profileNavigationStore, catalogNavigationStore)
             };
             MainWindow.Show();
             base.OnStartup(e); 
+        }
+
+        private RegistrationViewModel CreateRegistrationViewModel()
+        {
+            return new RegistrationViewModel(profileNavigationStore, CreateLoginViewModel);
+        }
+
+        private LoginViewModel CreateLoginViewModel()
+        {
+            return new LoginViewModel(profileNavigationStore, CreateRegistrationViewModel);
+        }
+
+        private CatalogViewModel CreateCatalogViewModel()
+        {
+            return new CatalogViewModel(catalogNavigationStore, CreateEraViewModel);
+        }
+
+        private EraViewModel CreateEraViewModel()
+        {
+            return new EraViewModel(catalogNavigationStore, CreateCatalogViewModel);
         }
     }
 }

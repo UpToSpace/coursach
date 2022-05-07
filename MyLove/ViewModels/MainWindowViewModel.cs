@@ -13,23 +13,35 @@ namespace MyLove.ViewModels
 {
     internal class MainWindowViewModel : ViewModel
     {
-        private readonly NavigationStore navigationStore;
-        private void OnCurrentViewModelChanged()
-        {
-            OnPropertyChanged(nameof(CurrentViewModel));
-        }
-        public ViewModel CurrentViewModel => navigationStore.CurrentViewModel;
+        #region Navigation
 
-        public MainWindowViewModel(NavigationStore navigationStore)
+        private readonly NavigationStore profileNavigationStore;
+        private readonly NavigationStore catalogNavigationStore;
+        private void OnCurrentProfileViewModelChanged()
+        {
+            OnPropertyChanged(nameof(ProfileCurrentViewModel));
+        }
+        private void OnCurrentCatalogViewModelChanged()
+        {
+            OnPropertyChanged(nameof(CatalogCurrentViewModel));
+        }
+        public ViewModel ProfileCurrentViewModel => profileNavigationStore.CurrentViewModel;
+        public ViewModel CatalogCurrentViewModel => catalogNavigationStore.CurrentViewModel;
+
+        public MainWindowViewModel(NavigationStore profileNavigationStore, NavigationStore catalogNavigationStore)
         {
             CloseApplicationCommand = new RelayCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecute);
             ChangeThemeCommand = new RelayCommand(OnChangeThemeCommandExecuted);
             ChangeLanguageCommand = new RelayCommand(OnChangeLanguageCommandExecuted);
 
-            this.navigationStore = navigationStore;
-            this.navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
+            this.profileNavigationStore = profileNavigationStore;
+            this.profileNavigationStore.CurrentViewModelChanged += OnCurrentProfileViewModelChanged;
+
+            this.catalogNavigationStore = catalogNavigationStore;
+            this.catalogNavigationStore.CurrentViewModelChanged += OnCurrentCatalogViewModelChanged;
         }
 
+        #endregion
 
         public ICommand CloseApplicationCommand { get; }
         private bool CanCloseApplicationCommandExecute(object o) => true;

@@ -15,4 +15,18 @@
         <Setter Property="FontFamily" Value="{StaticResource Philosopher}" />
         <Setter Property="BorderThickness" Value="0" />
     </Style>
+
+    <Style x:Key="ButtonBase" TargetType="Button">
+        <Setter Property="Width" Value="196" />
+        <Setter Property="Height" Value="64" />
+        <Setter Property="FontSize" Value="36" />
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style x:Key="TextBoxBase" TargetType="TextBox">
+        <Setter Property="Width" Value="340" />
+        <Setter Property="Height" Value="38" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="{StaticResource Philosopher}" />
+    </Style>
 </ResourceDictionary>

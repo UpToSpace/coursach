@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\University\coursach\MyLove\MyLove\App.xaml
-81656185719
+111240968670
 
-16-373731374
+221440389478
 551060039686
-Views\Languages\En.xaml;Views\Languages\Ru.xaml;Views\Themes\BaseTheme.xaml;Views\Themes\DarkTheme.xaml;Views\Themes\LightTheme.xaml;Views\UserControls\Login.xaml;Views\UserControls\Registration.xaml;Views\Windows\MainWindow.xaml;
+Views\Languages\En.xaml;Views\Languages\Ru.xaml;Views\Themes\BaseTheme.xaml;Views\Themes\DarkTheme.xaml;Views\Themes\LightTheme.xaml;Views\UserControls\Catalog.xaml;Views\UserControls\Era.xaml;Views\UserControls\Login.xaml;Views\UserControls\Registration.xaml;Views\UserControls\UserProfile.xaml;Views\Windows\MainWindow.xaml;
 
 False
 

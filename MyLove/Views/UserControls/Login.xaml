@@ -5,8 +5,55 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MyLove.Views.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             FontFamily="{StaticResource Philosopher}">
     <Grid>
-        <Button Content="login" Width="50" Height="50" Command="{Binding LoginCommand}" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock
+            Grid.Row="1"
+            FontSize="36"
+            VerticalAlignment="Bottom"
+            Text="LOG IN" />
+        <TextBlock 
+            Grid.Row="2"
+            VerticalAlignment="Bottom"
+            Margin="0,0,270,0"
+            Text="Username" />
+        <TextBox
+            Grid.Row="3"
+            />
+        <TextBlock
+            Grid.Row="4"
+            Margin="0,0,270,0"
+            VerticalAlignment="Bottom"
+            Text="Password" />
+        <TextBox
+            Grid.Row="5"
+            />
+        <Button
+            Grid.Row="6"
+            Content="OK"
+            />
+        <TextBlock
+            Grid.Row="7"
+            VerticalAlignment="Center"
+            Text="or" />
+        <Button 
+            Grid.Row="8"
+            FontSize="24"
+            Content="New Account" 
+            Command="{Binding GoToRegistrationCommand}"
+            />
     </Grid>
 </UserControl>

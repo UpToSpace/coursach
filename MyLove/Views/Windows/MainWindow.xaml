@@ -34,10 +34,22 @@
             </TabItem>
             <TabItem 
                 Header="Catalog"
-                Style="{DynamicResource TabItem}"/>
+                Style="{DynamicResource TabItem}">
+                <TabItem.Resources>
+                    <DataTemplate DataType="{x:Type vm:CatalogViewModel}">
+                        <uc:Catalog />
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vm:EraViewModel}">
+                        <uc:Era />
+                    </DataTemplate>
+                </TabItem.Resources>
+
+                <ContentControl Content="{Binding CatalogCurrentViewModel}" />
+            </TabItem>
             <TabItem 
                 Header="About"
                 Style="{DynamicResource TabItem}"/>
+            
             <TabItem Header="Profile"
                      Style="{DynamicResource TabItem}">
                 <TabItem.Resources>
@@ -47,9 +59,12 @@
                     <DataTemplate DataType="{x:Type vm:RegistrationViewModel}">
                         <uc:Registration />
                     </DataTemplate>
+                    <!--<DataTemplate DataType="{x:Type vm:RegistrationViewModel}">
+                        <uc:Registration />
+                    </DataTemplate>-->
                 </TabItem.Resources>
 
-                <ContentControl Content="{Binding CurrentViewModel}" />
+                <ContentControl Content="{Binding ProfileCurrentViewModel}" />
             </TabItem>
 
             <TabItem Header="Settings"
