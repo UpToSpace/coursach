@@ -47,9 +47,23 @@
                 <ContentControl Content="{Binding CatalogCurrentViewModel}" />
             </TabItem>
             <TabItem 
-                Header="About"
-                Style="{DynamicResource TabItem}"/>
-            
+                Header="New"
+                Style="{DynamicResource TabItem}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock 
+                    Grid.Row="0"
+                    Text="CREATE NEW ERA" />
+                </Grid>
+            </TabItem>
             <TabItem Header="Profile"
                      Style="{DynamicResource TabItem}">
                 <TabItem.Resources>
@@ -59,9 +73,9 @@
                     <DataTemplate DataType="{x:Type vm:RegistrationViewModel}">
                         <uc:Registration />
                     </DataTemplate>
-                    <!--<DataTemplate DataType="{x:Type vm:RegistrationViewModel}">
-                        <uc:Registration />
-                    </DataTemplate>-->
+                    <DataTemplate DataType="{x:Type vm:UserProfileViewModel}">
+                        <uc:UserProfile />
+                    </DataTemplate>
                 </TabItem.Resources>
 
                 <ContentControl Content="{Binding ProfileCurrentViewModel}" />

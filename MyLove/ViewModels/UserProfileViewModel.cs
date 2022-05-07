@@ -13,9 +13,9 @@ namespace MyLove.ViewModels
     {
         public UserProfileViewModel(Infrastructure.Stores.NavigationStore navigationStore, Func<LoginViewModel> createLoginViewModel)
         {
-            GoToUserPageCommand = new NavigateCommand(navigationStore, createLoginViewModel);
+            GoToLoginPageCommand = new NavigateCommand(navigationStore, createLoginViewModel);
         }
 
-        public ICommand GoToUserPageCommand { get; }
+        public ICommand GoToLoginPageCommand { get; }
     }
 }

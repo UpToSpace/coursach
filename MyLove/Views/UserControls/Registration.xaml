@@ -44,6 +44,7 @@
         <Button
             Grid.Row="6"
             Content="OK"
+            Command="{Binding GoToProfileCommand}"
             />
         <TextBlock
             Grid.Row="7"

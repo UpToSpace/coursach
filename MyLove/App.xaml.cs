@@ -36,12 +36,17 @@ namespace MyLove
 
         private RegistrationViewModel CreateRegistrationViewModel()
         {
-            return new RegistrationViewModel(profileNavigationStore, CreateLoginViewModel);
+            return new RegistrationViewModel(profileNavigationStore, CreateLoginViewModel, CreateUserProfileViewModel);
         }
 
         private LoginViewModel CreateLoginViewModel()
         {
-            return new LoginViewModel(profileNavigationStore, CreateRegistrationViewModel);
+            return new LoginViewModel(profileNavigationStore, CreateRegistrationViewModel, CreateUserProfileViewModel);
+        }
+
+        private UserProfileViewModel CreateUserProfileViewModel()
+        {
+            return new UserProfileViewModel(profileNavigationStore, CreateLoginViewModel);
         }
 
         private CatalogViewModel CreateCatalogViewModel()

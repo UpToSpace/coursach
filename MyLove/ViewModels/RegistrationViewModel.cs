@@ -11,11 +11,13 @@ namespace MyLove.ViewModels
 {
     class RegistrationViewModel : ViewModel
     {
-        public RegistrationViewModel(Infrastructure.Stores.NavigationStore navigationStore, Func<LoginViewModel> createLoginViewModel)
+        public RegistrationViewModel(Infrastructure.Stores.NavigationStore navigationStore, Func<LoginViewModel> createLoginViewModel, Func<UserProfileViewModel> createUserProfileViewModel)
         {
             GoToLoginPageCommand = new NavigateCommand(navigationStore, createLoginViewModel);
+            GoToProfileCommand = new NavigateCommand(navigationStore, createUserProfileViewModel);
         }
 
         public ICommand GoToLoginPageCommand { get; }
+        public ICommand GoToProfileCommand { get; }
     }
 }

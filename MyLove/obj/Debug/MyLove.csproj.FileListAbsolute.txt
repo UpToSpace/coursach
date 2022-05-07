@@ -96,3 +96,4 @@ D:\University\coursach\MyLove\MyLove\obj\Debug\Views\UserControls\Catalog.baml
 D:\University\coursach\MyLove\MyLove\obj\Debug\Views\UserControls\Era.baml
 D:\University\coursach\MyLove\MyLove\obj\Debug\Views\UserControls\UserProfile.g.cs
 D:\University\coursach\MyLove\MyLove\obj\Debug\Views\UserControls\UserProfile.baml
+D:\University\coursach\MyLove\MyLove\obj\Debug\Views\Templates\Card.baml

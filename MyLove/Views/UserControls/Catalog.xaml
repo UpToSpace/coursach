@@ -7,7 +7,25 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-
+        <ScrollViewer>
+            <ItemsControl x:Name="PictureList" ItemsSource="{Binding Pictures}" DataContext="{Binding}"
+                          >
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel ItemWidth="300" 
+                       Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border>
+                            <ContentControl Template="{DynamicResource Card}"
+                                            />
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
         <Button Content="Catalog" Height="50" Width="70" Command="{Binding GoToEraPageCommand}" />
     </Grid>
 </UserControl>
