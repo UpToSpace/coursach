@@ -10,10 +10,11 @@ namespace MyLove.Models
     class CatalogModel
     {
         private IEnumerable<Era> eras;
+        public IEnumerable<Era> Eras { get => eras; set => eras = value; }
 
         public CatalogModel()
         {
-            eras = coursachEntities.GetContext().Era;
+            Eras = coursachEntities.GetContext().Era;
         }
 
     }

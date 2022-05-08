@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище coursachModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin_">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Answer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="question_id" Type="int" />
+    <Property Name="text" Type="varchar" MaxLength="100" />
+    <Property Name="points" Type="int" />
+  </EntityType>
+  <EntityType Name="Era">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="picture_path" Type="varchar" MaxLength="60" />
+    <Property Name="name" Type="varchar" MaxLength="40" />
+    <Property Name="description" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="era_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Travels">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="20" />
+    <Property Name="era_id" Type="int" />
+    <Property Name="points" Type="int" />
+  </EntityType>
+  <EntityType Name="User_">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Answer__question__3F466844">
+    <End Role="Question" Type="Self.Question" Multiplicity="0..1" />
+    <End Role="Answer" Type="Self.Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Answer">
+        <PropertyRef Name="question_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Question__era_id__3C69FB99">
+    <End Role="Era" Type="Self.Era" Multiplicity="0..1" />
+    <End Role="Question" Type="Self.Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Era">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Question">
+        <PropertyRef Name="era_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Travels__era_id__4316F928">
+    <End Role="Era" Type="Self.Era" Multiplicity="0..1" />
+    <End Role="Travels" Type="Self.Travels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Era">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Travels">
+        <PropertyRef Name="era_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Travels__usernam__4222D4EF">
+    <End Role="User_" Type="Self.User_" Multiplicity="0..1" />
+    <End Role="Travels" Type="Self.Travels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_">
+        <PropertyRef Name="username" />
+      </Principal>
+      <Dependent Role="Travels">
+        <PropertyRef Name="username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище coursachModelContainer">
+    <EntitySet Name="Admin_" EntityType="Self.Admin_" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Answer" EntityType="Self.Answer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Era" EntityType="Self.Era" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Travels" EntityType="Self.Travels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_" EntityType="Self.User_" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Answer__question__3F466844" Association="Self.FK__Answer__question__3F466844">
+      <End Role="Question" EntitySet="Question" />
+      <End Role="Answer" EntitySet="Answer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Question__era_id__3C69FB99" Association="Self.FK__Question__era_id__3C69FB99">
+      <End Role="Era" EntitySet="Era" />
+      <End Role="Question" EntitySet="Question" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Travels__era_id__4316F928" Association="Self.FK__Travels__era_id__4316F928">
+      <End Role="Era" EntitySet="Era" />
+      <End Role="Travels" EntitySet="Travels" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Travels__usernam__4222D4EF" Association="Self.FK__Travels__usernam__4222D4EF">
+      <End Role="User_" EntitySet="User_" />
+      <End Role="Travels" EntitySet="Travels" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -13,7 +13,7 @@ namespace MyLove.ViewModels
     {
         public EraViewModel(Infrastructure.Stores.NavigationStore navigationStore, Func<CatalogViewModel> catalogViewModel)
         {
-            GoToCatalogPageCommand = new NavigateCommand(navigationStore, catalogViewModel);
+            //GoToCatalogPageCommand = new NavigateCommand(navigationStore, catalogViewModel);
         }
 
         public ICommand GoToCatalogPageCommand { get; }

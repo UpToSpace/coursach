@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище coursachModelContainer" CdmEntityContainer="coursachEntities">
+    <EntitySetMapping Name="Admin_">
+      <EntityTypeMapping TypeName="coursachModel.Admin_">
+        <MappingFragment StoreEntitySet="Admin_">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Answer">
+      <EntityTypeMapping TypeName="coursachModel.Answer">
+        <MappingFragment StoreEntitySet="Answer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="question_id" ColumnName="question_id" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="points" ColumnName="points" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Era">
+      <EntityTypeMapping TypeName="coursachModel.Era">
+        <MappingFragment StoreEntitySet="Era">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="picture_path" ColumnName="picture_path" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Question">
+      <EntityTypeMapping TypeName="coursachModel.Question">
+        <MappingFragment StoreEntitySet="Question">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="era_id" ColumnName="era_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Travels">
+      <EntityTypeMapping TypeName="coursachModel.Travels">
+        <MappingFragment StoreEntitySet="Travels">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="era_id" ColumnName="era_id" />
+          <ScalarProperty Name="points" ColumnName="points" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_">
+      <EntityTypeMapping TypeName="coursachModel.User_">
+        <MappingFragment StoreEntitySet="User_">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

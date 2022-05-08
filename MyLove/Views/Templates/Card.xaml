@@ -32,7 +32,7 @@
                     <Image
                         Grid.Row="0"
                 VerticalAlignment="Top"
-                Source="{Binding Image, UpdateSourceTrigger=PropertyChanged}"
+                Source="{Binding picture_path, UpdateSourceTrigger=PropertyChanged}"
                 Margin="12 12 12 0"/>
                     <Viewbox
                        Grid.Row="1"
@@ -46,7 +46,7 @@
                        HorizontalAlignment="Left"
                        VerticalAlignment="Bottom"
                             x:Name="Name"
-                            Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+                            Text="{Binding name, UpdateSourceTrigger=PropertyChanged}"/>
                     </Viewbox>
                     <Viewbox
                         Grid.Row="2"
@@ -55,17 +55,19 @@
                         <TextBlock
                    Foreground="#fff"
                    Margin="12 0 2 0"
-                            Text="{Binding Path = Author, UpdateSourceTrigger=PropertyChanged}"/>
+                            Text="{Binding description, UpdateSourceTrigger=PropertyChanged}"/>
                     </Viewbox>
                     <Viewbox
                             Grid.Row="3"
                                 Height="20"
                         HorizontalAlignment="Left">
+                        <Button>
                         <TextBlock
                    Foreground="#fff"
                    Margin="12 0 2 0"
                    HorizontalAlignment="Left"
-                            Text="{Binding Path = Price, StringFormat='{}{0}$', UpdateSourceTrigger=PropertyChanged}" />
+                            Text="{Binding id, UpdateSourceTrigger=PropertyChanged}" />
+                        </Button>
                     </Viewbox>
 
                     <!--<Viewbox

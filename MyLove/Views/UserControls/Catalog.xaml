@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <ScrollViewer>
-            <ItemsControl x:Name="PictureList" ItemsSource="{Binding Pictures}" DataContext="{Binding}"
+            <ItemsControl x:Name="PictureList" ItemsSource="{Binding Eras}"
                           >
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>

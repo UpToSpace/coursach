@@ -233,6 +233,7 @@
     <Compile Include="Infrastructure\Commands\CloseApplicationCommand.cs" />
     <Compile Include="Infrastructure\Commands\NavigateCommand.cs" />
     <Compile Include="Infrastructure\Commands\RelayCommand.cs" />
+    <Compile Include="Infrastructure\Stores\Navigation.cs" />
     <Compile Include="Infrastructure\Stores\NavigationStore.cs" />
     <Compile Include="Model.Context.cs">
       <AutoGen>True</AutoGen>
@@ -250,6 +251,8 @@
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\CatalogModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\RegistrationModel.cs" />
     <Compile Include="Question.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
