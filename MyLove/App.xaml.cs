@@ -17,6 +17,7 @@ namespace MyLove
     {
         private readonly NavigationStore profileNavigationStore;
         private readonly NavigationStore catalogNavigationStore;
+
         public App()
         {
             profileNavigationStore = new NavigationStore();

@@ -15,6 +15,7 @@ namespace MyLove.ViewModels
     {
         private CatalogModel catalogModel;
         private ObservableCollection<Era> eras;
+        private Era selectedEra;
         public ObservableCollection<Era> Eras 
         {
             get => eras;
@@ -27,10 +28,15 @@ namespace MyLove.ViewModels
         public CatalogViewModel(Infrastructure.Stores.NavigationStore navigationStore, Func<EraViewModel> eraViewModel)
         {
             catalogModel = new CatalogModel();
-            //GoToEraPageCommand = new NavigateCommand(navigationStore, eraViewModel);
+            GoToEraPageCommand = new NavigateCommand(navigationStore, eraViewModel, OnGoToEraPageCommandExecuted);
             Eras = new ObservableCollection<Era>(catalogModel.Eras);
         }
 
+        public void OnGoToEraPageCommandExecuted(object o)
+        {
+            selectedEra = o as Era;
+            Container.era = selectedEra;
+        }
         public ICommand GoToEraPageCommand { get; }
     }
 }

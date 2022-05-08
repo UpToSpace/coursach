@@ -31,12 +31,6 @@ namespace MyLove.Infrastructure.Commands
             this.createViewModel = createViewModel;
         }
 
-        //public NavigateCommand(NavigationStore navigationStore, Func<ViewModel> createViewModel)
-        //{
-        //    this.navigationStore = navigationStore;
-        //    this.createViewModel = createViewModel;
-        //}
-
         public override bool CanExecute(object parameter) => canExecute?.Invoke(parameter) ?? true;
         public override void Execute(object parameter)
         {
