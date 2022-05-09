@@ -1,5 +1,4 @@
 ﻿using MyLove.Infrastructure.Commands;
-using MyLove.Infrastructure.Stores;
 using MyLove.Models;
 using MyLove.ViewModels.Base;
 using System;
@@ -16,34 +15,38 @@ namespace MyLove.ViewModels
         private string username;
         private string password;
         private LoginModel loginModel;
+        private MainWindowViewModel mainWindowViewModel;
 
-        public LoginViewModel(NavigationStore navigationStore, Func<RegistrationViewModel> createRegistrationViewModel, Func<UserProfileViewModel> createUserProfileViewModel)
+        public LoginViewModel(MainWindowViewModel mainWindowViewModel)
         {
             loginModel = new LoginModel();
-            GoToRegistrationCommand = new NavigateCommand(navigationStore, createRegistrationViewModel);
-            GoToProfileCommand = new NavigateCommand(navigationStore, createUserProfileViewModel, CanGoToProfileCommandExecute);
+            this.mainWindowViewModel = mainWindowViewModel;
+            GoToRegistrationCommand = new NavigateCommand(this.mainWindowViewModel);
+            GoToProfileCommand = new NavigateCommand(this.mainWindowViewModel);
+            CheckDataCommand = new RelayCommand(OnCheckDataCommandExecuted);
         }
 
         public ICommand GoToRegistrationCommand { get; }
         public ICommand GoToProfileCommand { get; }
+        public ICommand CheckDataCommand { get; }
 
-        private bool CanGoToProfileCommandExecute(object o)
+        private void OnCheckDataCommandExecuted(object o)
         {
             foreach (var item in loginModel.Users)
             {
                 if (Username == item.username && Password == item.password)
                 {
-                    return true;
+                    mainWindowViewModel.User = item;
+                    GoToProfileCommand.Execute("UserProfile");
                 }
             }
             foreach (var item in loginModel.Admins)
             {
                 if (Username == item.name && Password == item.password)
                 {
-                    return true;
+                    GoToProfileCommand.Execute("UserProfile");
                 }
             }
-            return false;
         }
         public string Username
         {
@@ -51,7 +54,6 @@ namespace MyLove.ViewModels
             set
             {
                 Set(ref username, value);
-                //OnPropertyChanged("Pictures");
             }
         }
 
@@ -61,7 +63,6 @@ namespace MyLove.ViewModels
             set
             {
                 Set(ref password, value);
-                //OnPropertyChanged("Pictures");
             }
         }
     }

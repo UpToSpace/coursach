@@ -13,6 +13,7 @@
             FontSize="24"
             Content="LOG OUT" 
             Command="{Binding GoToLoginPageCommand}"
+            CommandParameter="Login"
             />
     </Grid>
 </UserControl>

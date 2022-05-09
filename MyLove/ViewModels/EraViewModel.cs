@@ -12,10 +12,10 @@ namespace MyLove.ViewModels
     class EraViewModel : ViewModel
     {
         private Era era;
-        public EraViewModel(Infrastructure.Stores.NavigationStore navigationStore, Func<CatalogViewModel> catalogViewModel)
+        public EraViewModel(MainWindowViewModel mainWindowViewModel)
         {
-            GoToCatalogPageCommand = new NavigateCommand(navigationStore, catalogViewModel);
-            era = Container.era;
+            //GoToCatalogPageCommand = new NavigateCommand(navigationStore, catalogViewModel);
+            
         }
 
         public ICommand GoToCatalogPageCommand { get; }

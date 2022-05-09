@@ -1,7 +1,8 @@
 ﻿<Application x:Class="MyLove.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:MyLove">
+             xmlns:local="clr-namespace:MyLove"
+             StartupUri="./Views/Windows/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <FontFamily x:Key="Philosopher">

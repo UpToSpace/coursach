@@ -11,6 +11,9 @@
         ResizeMode="CanResize"
         Style="{DynamicResource MainWindow}"
         >
+    <Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -25,16 +28,15 @@
         <TabControl 
             Grid.Column="1"
             Grid.Row="1"
+            HorizontalAlignment="Center"
             Style="{DynamicResource TabControl}"
             >
             <TabItem 
-                Header="Main"
-                Style="{DynamicResource TabItem}"
+                Header="{DynamicResource Main}"
                 >
             </TabItem>
             <TabItem 
-                Header="Catalog"
-                Style="{DynamicResource TabItem}">
+                Header="{DynamicResource Catalog}">
                 <TabItem.Resources>
                     <DataTemplate DataType="{x:Type vm:CatalogViewModel}">
                         <uc:Catalog />
@@ -46,26 +48,8 @@
 
                 <ContentControl Content="{Binding CatalogCurrentViewModel}" />
             </TabItem>
-            <TabItem 
-                Header="New"
-                Style="{DynamicResource TabItem}">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <TextBlock 
-                    Grid.Row="0"
-                    Text="CREATE NEW ERA" />
-                </Grid>
-            </TabItem>
-            <TabItem Header="Profile"
-                     Style="{DynamicResource TabItem}">
+
+            <TabItem Header="{DynamicResource Profile}">
                 <TabItem.Resources>
                     <DataTemplate DataType="{x:Type vm:LoginViewModel}">
                         <uc:Login />
@@ -81,8 +65,7 @@
                 <ContentControl Content="{Binding ProfileCurrentViewModel}" />
             </TabItem>
 
-            <TabItem Header="Settings"
-                     Style="{DynamicResource TabItem}">
+            <TabItem Header="{DynamicResource Settings}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
@@ -155,6 +138,48 @@
                             Command="{Binding ChangeThemeCommand}"
                             CommandParameter="Light"/>
                     </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="{DynamicResource New}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="1.5*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="1.5*" />
+                        <RowDefinition Height="3*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock 
+                    Grid.Row="0"
+                    Text="CREATE NEW ERA"
+                        FontSize="24"/>
+                    <Button
+                        Grid.Row="1" 
+                        Content="Add Picture"/>
+                    <TextBlock 
+                        Grid.Row="2"
+                        VerticalAlignment="Bottom"
+                        Margin="0,0,270,0"
+                        Text="Name" />
+                    <TextBox
+                        Grid.Row="3"
+                        Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
+                        />
+                    <TextBlock
+                        Grid.Row="4"
+                        Margin="0,0,270,0"
+                        VerticalAlignment="Bottom"
+                        Text="Description" />
+                    <TextBox
+                        Grid.Row="5"
+                        Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"
+                        />
+                    <Button
+                        Grid.Row="6" 
+                        Content="Add"/>
                 </Grid>
             </TabItem>
             

@@ -24,12 +24,12 @@
             Grid.Row="1"
             FontSize="36"
             VerticalAlignment="Bottom"
-            Text="New Account" />
+            Text="{DynamicResource NewAccount}" />
         <TextBlock 
             Grid.Row="2"
             VerticalAlignment="Bottom"
             Margin="0,0,270,0"
-            Text="Username" />
+            Text="{DynamicResource Username}" />
         <TextBox
             Grid.Row="3"
             Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
@@ -47,16 +47,18 @@
             Grid.Row="6"
             Content="OK"
             Command="{Binding GoToProfileCommand}"
+            CommandParameter="UserProfile"
             />
         <TextBlock
             Grid.Row="7"
             VerticalAlignment="Center"
-            Text="or" />
+            Text="{DynamicResource Or}" />
         <Button 
             Grid.Row="8"
             FontSize="24"
-            Content="Back to Log In" 
+            Content="{DynamicResource BacktoLogIn}" 
             Command="{Binding GoToLoginPageCommand}"
+            CommandParameter="Login"
             />
     </Grid>
 </UserControl>

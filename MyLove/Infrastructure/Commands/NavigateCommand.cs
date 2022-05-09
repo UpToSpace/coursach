@@ -1,5 +1,4 @@
 ﻿using MyLove.Infrastructure.Commands.Base;
-using MyLove.Infrastructure.Stores;
 using MyLove.ViewModels;
 using MyLove.ViewModels.Base;
 using System;
@@ -7,35 +6,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace MyLove.Infrastructure.Commands
 {
-    class NavigateCommand : Command
-    {
-        private readonly NavigationStore navigationStore;
-        private readonly Func<ViewModel> createViewModel;
-        private readonly Action<object> execute;
-        private readonly Func<object, bool> canExecute;
+	class NavigateCommand : ICommand
+	{
+		public event EventHandler CanExecuteChanged;
 
-        public NavigateCommand(NavigationStore navigationStore, Func<ViewModel> createViewModel, Action<object> Execute, Func<object, bool> CanExecute = null)
-        {
-            execute = Execute;
-            canExecute = CanExecute;
-            this.navigationStore = navigationStore;
-            this.createViewModel = createViewModel;
-        }
-        public NavigateCommand(NavigationStore navigationStore, Func<ViewModel> createViewModel, Func<object, bool> CanExecute = null)
-        {
-            canExecute = CanExecute;
-            this.navigationStore = navigationStore;
-            this.createViewModel = createViewModel;
-        }
+		private MainWindowViewModel viewModel;
 
-        public override bool CanExecute(object parameter) => canExecute?.Invoke(parameter) ?? true;
-        public override void Execute(object parameter)
-        {
-            navigationStore.CurrentViewModel = createViewModel();
-            execute?.Invoke(parameter);
-        }
-    }
+		public NavigateCommand(MainWindowViewModel viewModel)
+		{
+			this.viewModel = viewModel;
+		}
+
+		public bool CanExecute(object parameter) => true;
+
+		public void Execute(object parameter)
+		{
+			switch(parameter as string)
+            {
+				case "Login":
+					viewModel.ProfileCurrentViewModel = new LoginViewModel(viewModel);
+					break;
+				case "Registration":
+					viewModel.ProfileCurrentViewModel = new RegistrationViewModel(viewModel);
+					break;
+				case "UserProfile":
+					viewModel.ProfileCurrentViewModel = new UserProfileViewModel(viewModel);
+					break;
+				default:
+					break;
+            }
+		}
+	}
 }

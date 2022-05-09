@@ -1,5 +1,4 @@
 ﻿using MyLove.Infrastructure.Commands;
-using MyLove.Infrastructure.Stores;
 using MyLove.Models;
 using MyLove.ViewModels.Base;
 using System;
@@ -17,11 +16,11 @@ namespace MyLove.ViewModels
         private string password;
         private RegistrationModel registrationModel;
 
-        public RegistrationViewModel(NavigationStore navigationStore, Func<LoginViewModel> createLoginViewModel, Func<UserProfileViewModel> createUserProfileViewModel)
+        public RegistrationViewModel(MainWindowViewModel mainWindowViewModel)
         {
             registrationModel = new RegistrationModel();
-            GoToLoginPageCommand = new NavigateCommand(navigationStore, createLoginViewModel);
-            GoToProfileCommand = new NavigateCommand(navigationStore, createUserProfileViewModel, OnGoToProfileCommandExecuted, CanGoToProfileCommandExecute);
+            GoToLoginPageCommand = new NavigateCommand(mainWindowViewModel);
+            GoToProfileCommand = new NavigateCommand(mainWindowViewModel);
         }
 
         public ICommand GoToLoginPageCommand { get; }

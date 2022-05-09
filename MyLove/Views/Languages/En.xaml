@@ -5,9 +5,14 @@
     <v:String x:Key="ChangeThemeLanguage">In this page you can change language and theme</v:String>
     <v:String x:Key="ChangeTheme">Choose theme you prefer</v:String>
     <v:String x:Key="ChangeLanguage">Choose your language</v:String>
-    <!--<v:String x:Key=""></v:String>
-    <v:String x:Key=""></v:String>
-    <v:String x:Key=""></v:String>
-    <v:String x:Key=""></v:String>
-    <v:String x:Key=""></v:String>-->
+    <v:String x:Key="Main">Main</v:String>
+    <v:String x:Key="Profile">Profile</v:String>
+    <v:String x:Key="Settings">Settings</v:String>
+    <v:String x:Key="New">New</v:String>
+    <v:String x:Key="Login">LOG IN</v:String>
+    <v:String x:Key="Username">Username</v:String>
+    <v:String x:Key="Password">Password</v:String>
+    <v:String x:Key="Or">or</v:String>
+    <v:String x:Key="NewAccount">New Account</v:String>
+    <v:String x:Key="BacktoLogIn">Back to Log In</v:String>
 </ResourceDictionary>

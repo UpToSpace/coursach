@@ -1,5 +1,4 @@
 ﻿using MyLove.Infrastructure.Commands;
-using MyLove.Infrastructure.Stores;
 using MyLove.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -13,35 +12,25 @@ namespace MyLove.ViewModels
 {
     internal class MainWindowViewModel : ViewModel
     {
-        #region Navigation
-
-        private readonly NavigationStore profileNavigationStore;
-        private readonly NavigationStore catalogNavigationStore;
-        private void OnCurrentProfileViewModelChanged()
+        private User_ user;
+        private ViewModel profileCurrentViewModel;
+        public ViewModel ProfileCurrentViewModel
         {
-            OnPropertyChanged(nameof(ProfileCurrentViewModel));
+            get => profileCurrentViewModel;
+            set
+            {
+                Set(ref profileCurrentViewModel, value);
+            }
         }
-        private void OnCurrentCatalogViewModelChanged()
+        public User_ User { get => user; set => user = value; }
+        public MainWindowViewModel()
         {
-            OnPropertyChanged(nameof(CatalogCurrentViewModel));
-        }
-        public ViewModel ProfileCurrentViewModel => profileNavigationStore.CurrentViewModel;
-        public ViewModel CatalogCurrentViewModel => catalogNavigationStore.CurrentViewModel;
-
-        public MainWindowViewModel(NavigationStore profileNavigationStore, NavigationStore catalogNavigationStore)
-        {
+            ProfileCurrentViewModel = new LoginViewModel(this);
             CloseApplicationCommand = new RelayCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecute);
             ChangeThemeCommand = new RelayCommand(OnChangeThemeCommandExecuted);
             ChangeLanguageCommand = new RelayCommand(OnChangeLanguageCommandExecuted);
-
-            this.profileNavigationStore = profileNavigationStore;
-            this.profileNavigationStore.CurrentViewModelChanged += OnCurrentProfileViewModelChanged;
-
-            this.catalogNavigationStore = catalogNavigationStore;
-            this.catalogNavigationStore.CurrentViewModelChanged += OnCurrentCatalogViewModelChanged;
         }
 
-        #endregion
 
         public ICommand CloseApplicationCommand { get; }
         private bool CanCloseApplicationCommandExecute(object o) => true;
@@ -73,6 +62,7 @@ namespace MyLove.ViewModels
 
         #region Change Language
         public ICommand ChangeLanguageCommand { get; }
+
         private void OnChangeLanguageCommandExecuted(object o)
         {
             string lang = o as string;

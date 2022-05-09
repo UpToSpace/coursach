@@ -15,28 +15,39 @@ namespace MyLove.ViewModels
     {
         private CatalogModel catalogModel;
         private ObservableCollection<Era> eras;
-        private Era selectedEra;
+        private Era era;
         public ObservableCollection<Era> Eras 
         {
             get => eras;
-            set
-            {
-                eras = value;
-            }
+            //set
+            //{
+            //    eras = value;
+            //}
         }
         
-        public CatalogViewModel(Infrastructure.Stores.NavigationStore navigationStore, Func<EraViewModel> eraViewModel)
+        public CatalogViewModel(MainWindowViewModel mainWindowViewModel)
         {
             catalogModel = new CatalogModel();
-            GoToEraPageCommand = new NavigateCommand(navigationStore, eraViewModel, OnGoToEraPageCommandExecuted);
-            Eras = new ObservableCollection<Era>(catalogModel.Eras);
+            GoToEraPageCommand = new NavigateCommand(mainWindowViewModel);
+            eras = new ObservableCollection<Era>(catalogModel.Eras);
         }
 
         public void OnGoToEraPageCommandExecuted(object o)
         {
-            selectedEra = o as Era;
-            Container.era = selectedEra;
+            era = o as Era;
         }
         public ICommand GoToEraPageCommand { get; }
+
+        private string searchText;
+        public string SearchText
+        {
+            get { return searchText; }
+            set
+            {
+                Set(ref searchText, value);
+                eras = new ObservableCollection<Era>(catalogModel.Eras.Where(e => e.name.Contains(SearchText)));
+                OnPropertyChanged("Eras");
+            }
+        }
     }
 }
