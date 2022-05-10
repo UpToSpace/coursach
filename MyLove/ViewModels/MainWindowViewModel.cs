@@ -1,4 +1,5 @@
 ﻿using MyLove.Infrastructure.Commands;
+using MyLove.Models;
 using MyLove.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,13 @@ namespace MyLove.ViewModels
 {
     internal class MainWindowViewModel : ViewModel
     {
+        private MainWindowModel mainWindowModel;
         private User_ user;
+        private Era newEra;
+        private Era era;
+
+        #region Navigation
+
         private ViewModel profileCurrentViewModel;
         public ViewModel ProfileCurrentViewModel
         {
@@ -22,15 +29,42 @@ namespace MyLove.ViewModels
                 Set(ref profileCurrentViewModel, value);
             }
         }
+        private ViewModel catalogCurrentViewModel;
+        public ViewModel CatalogCurrentViewModel
+        {
+            get => catalogCurrentViewModel;
+            set
+            {
+                Set(ref catalogCurrentViewModel, value);
+            }
+        }
+
+        #endregion
+
+        public Era Era { get => era; set => Set(ref era, value); }
         public User_ User { get => user; set => user = value; }
+        public Era NewEra { get => newEra; set => Set(ref newEra, value); }
+
         public MainWindowViewModel()
         {
+            mainWindowModel = new MainWindowModel();
+
             ProfileCurrentViewModel = new LoginViewModel(this);
+            CatalogCurrentViewModel = new CatalogViewModel(this);
+
+            newEra = new Era();
+            AddEraCommand = new RelayCommand(OnAddEraCommandExecuted);
+
             CloseApplicationCommand = new RelayCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecute);
             ChangeThemeCommand = new RelayCommand(OnChangeThemeCommandExecuted);
             ChangeLanguageCommand = new RelayCommand(OnChangeLanguageCommandExecuted);
         }
 
+        public ICommand AddEraCommand { get; }
+        private void OnAddEraCommandExecuted(object o)
+        {
+            mainWindowModel.AddNewEra(NewEra);
+        }
 
         public ICommand CloseApplicationCommand { get; }
         private bool CanCloseApplicationCommandExecute(object o) => true;

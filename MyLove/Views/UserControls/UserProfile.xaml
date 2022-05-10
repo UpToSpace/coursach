@@ -8,12 +8,36 @@
              d:DesignHeight="450" d:DesignWidth="800"
              FontFamily="{StaticResource Philosopher}">
     <Grid>
-        <Button 
-            Grid.Row="8"
-            FontSize="24"
-            Content="LOG OUT" 
-            Command="{Binding GoToLoginPageCommand}"
-            CommandParameter="Login"
-            />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <DockPanel Grid.Row="1">
+            <TextBlock
+                DockPanel.Dock="Left"
+                Text="{DynamicResource Hello}"
+                Margin="0 0 5 0"/>
+            <TextBlock
+                DockPanel.Dock="Left"
+                Text="{Binding Path=User.username}"
+                />
+            <Button 
+                DockPanel.Dock="Right"
+                FontSize="24"
+                Content="LOG OUT" 
+                Command="{Binding LogoutCommand}"
+                CommandParameter="Login"
+                />
+        </DockPanel>
+        
     </Grid>
 </UserControl>

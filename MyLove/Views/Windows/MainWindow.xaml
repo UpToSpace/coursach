@@ -35,8 +35,7 @@
                 Header="{DynamicResource Main}"
                 >
             </TabItem>
-            <TabItem 
-                Header="{DynamicResource Catalog}">
+            <TabItem Header="{DynamicResource Catalog}">
                 <TabItem.Resources>
                     <DataTemplate DataType="{x:Type vm:CatalogViewModel}">
                         <uc:Catalog />
@@ -166,7 +165,7 @@
                         Text="Name" />
                     <TextBox
                         Grid.Row="3"
-                        Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
+                        Text="{Binding NewEra.name, UpdateSourceTrigger=PropertyChanged}"
                         />
                     <TextBlock
                         Grid.Row="4"
@@ -175,14 +174,14 @@
                         Text="Description" />
                     <TextBox
                         Grid.Row="5"
-                        Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"
+                        Text="{Binding NewEra.description, UpdateSourceTrigger=PropertyChanged}"
                         />
                     <Button
                         Grid.Row="6" 
-                        Content="Add"/>
+                        Content="Add"
+                        Command="{Binding AddEraCommand}"/>
                 </Grid>
             </TabItem>
-            
         </TabControl>
     </Grid>
 </Window>

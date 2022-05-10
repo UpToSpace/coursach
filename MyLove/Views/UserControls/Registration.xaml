@@ -46,7 +46,7 @@
         <Button
             Grid.Row="6"
             Content="OK"
-            Command="{Binding GoToProfileCommand}"
+            Command="{Binding CheckDataCommand}"
             CommandParameter="UserProfile"
             />
         <TextBlock

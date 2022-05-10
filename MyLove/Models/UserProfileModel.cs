@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyLove.ViewModels.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,10 @@ namespace MyLove.Models
     class UserProfileModel
     {
         private User_ user;
-        public UserProfileModel(object user)
+        public Travels Travels_;
+        public UserProfileModel(ViewModel mainViewModel)
         {
-            this.user = user as User_;
+            
         }
     }
 }

@@ -11,13 +11,25 @@ namespace MyLove.ViewModels
 {
     class EraViewModel : ViewModel
     {
+        private MainWindowViewModel mainWindowViewModel;
         private Era era;
+        public Era Era { get => era; set => era = value; }
+
         public EraViewModel(MainWindowViewModel mainWindowViewModel)
         {
-            //GoToCatalogPageCommand = new NavigateCommand(navigationStore, catalogViewModel);
-            
+            this.mainWindowViewModel = mainWindowViewModel;
+            GoToCatalogPageCommand = new NavigateCommand(mainWindowViewModel);
+            ShowCatalogCommand = new RelayCommand(OnShowCatalogCommandExecuted);
+            Era = mainWindowViewModel.Era;
         }
 
         public ICommand GoToCatalogPageCommand { get; }
+        public ICommand ShowCatalogCommand { get; }
+
+
+        private void OnShowCatalogCommandExecuted(object o)
+        {
+            GoToCatalogPageCommand.Execute("Catalog");
+        }
     }
 }

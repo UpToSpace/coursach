@@ -250,6 +250,7 @@
     </Compile>
     <Compile Include="Models\CatalogModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\MainWindowModel.cs" />
     <Compile Include="Models\RegistrationModel.cs" />
     <Compile Include="Models\UserProfileModel.cs" />
     <Compile Include="Question.cs">

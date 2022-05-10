@@ -15,28 +15,22 @@ namespace MyLove.ViewModels
     {
         private CatalogModel catalogModel;
         private ObservableCollection<Era> eras;
-        private Era era;
+        private MainWindowViewModel mainWindowViewModel;
         public ObservableCollection<Era> Eras 
         {
             get => eras;
-            //set
-            //{
-            //    eras = value;
-            //}
         }
         
         public CatalogViewModel(MainWindowViewModel mainWindowViewModel)
         {
             catalogModel = new CatalogModel();
+            this.mainWindowViewModel = mainWindowViewModel;
             GoToEraPageCommand = new NavigateCommand(mainWindowViewModel);
+            ShowEraCommand = new RelayCommand(OnCheckDataCommandExecuted);
             eras = new ObservableCollection<Era>(catalogModel.Eras);
         }
-
-        public void OnGoToEraPageCommandExecuted(object o)
-        {
-            era = o as Era;
-        }
         public ICommand GoToEraPageCommand { get; }
+        public ICommand ShowEraCommand { get; }
 
         private string searchText;
         public string SearchText
@@ -48,6 +42,18 @@ namespace MyLove.ViewModels
                 eras = new ObservableCollection<Era>(catalogModel.Eras.Where(e => e.name.Contains(SearchText)));
                 OnPropertyChanged("Eras");
             }
+        }
+        private void OnCheckDataCommandExecuted(object o)
+        {
+            if (mainWindowViewModel.User != null)
+            {
+                Travels travel = new Travels();
+                travel.era_id = mainWindowViewModel.Era.id;
+                travel.User_ = mainWindowViewModel.User;
+                mainWindowViewModel.User.Travels.Add(travel);
+            }
+            mainWindowViewModel.Era = o as Era;
+            GoToEraPageCommand.Execute("Era");
         }
     }
 }

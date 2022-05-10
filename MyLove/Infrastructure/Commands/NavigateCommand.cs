@@ -36,8 +36,14 @@ namespace MyLove.Infrastructure.Commands
 				case "UserProfile":
 					viewModel.ProfileCurrentViewModel = new UserProfileViewModel(viewModel);
 					break;
-				default:
+				case "Catalog":
+					viewModel.CatalogCurrentViewModel = new CatalogViewModel(viewModel);
 					break;
+				case "Era":
+					viewModel.CatalogCurrentViewModel = new EraViewModel(viewModel);
+					break;
+                default:
+                    break;
             }
 		}
 	}

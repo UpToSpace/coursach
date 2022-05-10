@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MyLove.Views.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             FontFamily="{StaticResource Philosopher}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -13,7 +14,13 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <TextBlock
-            Text="k" />
-        <Button Content="Era" Height="50" Width="70" Command="{Binding GoToCatalogPageCommand}" />
+            Text="{Binding Era.name}" />
+        <TextBlock
+            Text="{Binding Era.description}" />
+        <Button 
+            Content="Era" 
+            Height="50" 
+            Width="70" 
+            Command="{Binding ShowCatalogCommand}" />
     </Grid>
 </UserControl>

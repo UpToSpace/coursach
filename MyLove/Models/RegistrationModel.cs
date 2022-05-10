@@ -19,5 +19,11 @@ namespace MyLove.Models
 
         public DbSet<User_> Users { get => users; set => users = value; }
         public DbSet<Admin_> Admins { get => admins; set => admins = value; }
+
+        public void AddUser(User_ user)
+        {
+            Users.Add(user);
+            coursachEntities.GetContext().SaveChanges();
+        }
     }
 }
