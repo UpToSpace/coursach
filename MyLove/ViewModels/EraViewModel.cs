@@ -41,6 +41,7 @@ namespace MyLove.ViewModels
                 travel.User_ = mainWindowViewModel.User;
                 travel.Era = Era;
                 eraModel.AddUserTravel(travel);
+                OnPropertyChanged("Travels");
             }
             GoToCatalogPageCommand.Execute("Catalog");
         }

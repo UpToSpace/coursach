@@ -25,7 +25,7 @@ namespace MyLove.ViewModels
             AddFeedbackCommand = new RelayCommand(OnAddFeedbackCommandExecuted);
         }
 
-        public List<Feedback> Feedbacks { get => feedbacks; set => feedbacks = value; }
+        public List<Feedback> Feedbacks { get => feedbacks; set => Set(ref feedbacks, value); }
         public ICommand AddFeedbackCommand { get; }
         public string Description { get => description; set => Set(ref description, value); }
 
@@ -36,6 +36,7 @@ namespace MyLove.ViewModels
             feedback.Username = mainWindowViewModel.User.Username;
             feedback.User_ = mainWindowViewModel.User;
             feedbacksModel.AddFeedback(feedback);
+            Feedbacks = feedbacksModel.Feedbacks.ToList();
         }
     }
 }
