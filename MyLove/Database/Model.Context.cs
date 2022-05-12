@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyLove
+namespace MyLove.Database
 {
     using System;
     using System.Data.Entity;
@@ -16,6 +16,7 @@ namespace MyLove
     public partial class coursachEntities : DbContext
     {
         private static coursachEntities context;
+
         public coursachEntities()
             : base("name=coursachEntities")
         {
@@ -29,17 +30,16 @@ namespace MyLove
             }
             return context;
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Admin_> Admin_ { get; set; }
-        public virtual DbSet<Answer> Answer { get; set; }
+        public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<Era> Era { get; set; }
-        public virtual DbSet<Question> Question { get; set; }
-        public virtual DbSet<Travels> Travels { get; set; }
+        public virtual DbSet<Feedback> Feedback { get; set; }
+        public virtual DbSet<Travel> Travel { get; set; }
         public virtual DbSet<User_> User_ { get; set; }
     }
 }

@@ -14,9 +14,9 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <TextBlock
-            Text="{Binding Era.name}" />
+            Text="{Binding Era.Name}" />
         <TextBlock
-            Text="{Binding Era.description}" />
+            Text="{Binding Era.Description}" />
         <Button 
             Content="Era" 
             Height="50" 

@@ -1,4 +1,5 @@
-﻿using MyLove.Infrastructure.Commands;
+﻿using MyLove.Database;
+using MyLove.Infrastructure.Commands;
 using MyLove.Models;
 using MyLove.ViewModels.Base;
 using System;
@@ -39,19 +40,12 @@ namespace MyLove.ViewModels
             set
             {
                 Set(ref searchText, value);
-                eras = new ObservableCollection<Era>(catalogModel.Eras.Where(e => e.name.Contains(SearchText)));
+                eras = new ObservableCollection<Era>(catalogModel.Eras.Where(e => e.Name.Contains(SearchText)));
                 OnPropertyChanged("Eras");
             }
         }
         private void OnCheckDataCommandExecuted(object o)
         {
-            if (mainWindowViewModel.User != null)
-            {
-                Travels travel = new Travels();
-                travel.era_id = mainWindowViewModel.Era.id;
-                travel.User_ = mainWindowViewModel.User;
-                mainWindowViewModel.User.Travels.Add(travel);
-            }
             mainWindowViewModel.Era = o as Era;
             GoToEraPageCommand.Execute("Era");
         }

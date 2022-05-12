@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyLove
+namespace MyLove.Database
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Answer
+    public partial class Travel
     {
-        public int id { get; set; }
-        public Nullable<int> question_id { get; set; }
-        public string text { get; set; }
-        public Nullable<int> points { get; set; }
+        public int Id { get; set; }
+        public string Username { get; set; }
+        public Nullable<int> EraId { get; set; }
     
-        public virtual Question Question { get; set; }
+        public virtual Era Era { get; set; }
+        public virtual User_ User_ { get; set; }
     }
 }

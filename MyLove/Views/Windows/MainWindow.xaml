@@ -28,11 +28,10 @@
         <TabControl 
             Grid.Column="1"
             Grid.Row="1"
-            HorizontalAlignment="Center"
             Style="{DynamicResource TabControl}"
             >
             <TabItem 
-                Header="{DynamicResource Main}"
+                Header="{DynamicResource Main}" Height="27" Margin="0,0,0.2,0" VerticalAlignment="Top"
                 >
             </TabItem>
             <TabItem Header="{DynamicResource Catalog}">
@@ -46,6 +45,56 @@
                 </TabItem.Resources>
 
                 <ContentControl Content="{Binding CatalogCurrentViewModel}" />
+            </TabItem>
+
+            <TabItem Header="{DynamicResource New}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="3*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock 
+                    Grid.Row="0"
+                    Text="CREATE NEW ERA"
+                        FontSize="24"/>
+                    <Button
+                        Grid.Row="1" 
+                        Content="Add Picture"/>
+                    <TextBlock 
+                        Grid.Row="2"
+                        VerticalAlignment="Bottom"
+                        Margin="0,0,270,0"
+                        Text="Name" />
+                    <TextBox
+                        Grid.Row="3"
+                        Text="{Binding NewEra.Name, UpdateSourceTrigger=PropertyChanged}"
+                        />
+                    <TextBlock
+                        Grid.Row="4"
+                        Margin="0,0,270,0"
+                        VerticalAlignment="Bottom"
+                        Text="Description" />
+                    <TextBox
+                        Grid.Row="5"
+                        Text="{Binding NewEra.ShortDescription, UpdateSourceTrigger=PropertyChanged}"
+                        />
+                    <TextBox
+                        Grid.Row="6"
+                        VerticalContentAlignment="Stretch"
+                        TextWrapping="Wrap" 
+                        Height="Auto"
+                        />
+                    <Button
+                        Grid.Row="7" 
+                        Content="Add"
+                        Command="{Binding AddEraCommand}"/>
+                </Grid>
             </TabItem>
 
             <TabItem Header="{DynamicResource Profile}">
@@ -62,6 +111,17 @@
                 </TabItem.Resources>
 
                 <ContentControl Content="{Binding ProfileCurrentViewModel}" />
+            </TabItem>
+
+            <TabItem Header="Feedbacks">
+                <TabItem.Resources>
+                    <DataTemplate DataType="{x:Type vm:FeedbacksViewModel}">
+                        <uc:Feedbacks />
+                    </DataTemplate>
+                </TabItem.Resources>
+
+                <ContentControl Content="{Binding FeedbacksViewModel}" />
+                
             </TabItem>
 
             <TabItem Header="{DynamicResource Settings}">
@@ -140,48 +200,6 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="{DynamicResource New}">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="4*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="1.5*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="1.5*" />
-                        <RowDefinition Height="3*" />
-                    </Grid.RowDefinitions>
-                    <TextBlock 
-                    Grid.Row="0"
-                    Text="CREATE NEW ERA"
-                        FontSize="24"/>
-                    <Button
-                        Grid.Row="1" 
-                        Content="Add Picture"/>
-                    <TextBlock 
-                        Grid.Row="2"
-                        VerticalAlignment="Bottom"
-                        Margin="0,0,270,0"
-                        Text="Name" />
-                    <TextBox
-                        Grid.Row="3"
-                        Text="{Binding NewEra.name, UpdateSourceTrigger=PropertyChanged}"
-                        />
-                    <TextBlock
-                        Grid.Row="4"
-                        Margin="0,0,270,0"
-                        VerticalAlignment="Bottom"
-                        Text="Description" />
-                    <TextBox
-                        Grid.Row="5"
-                        Text="{Binding NewEra.description, UpdateSourceTrigger=PropertyChanged}"
-                        />
-                    <Button
-                        Grid.Row="6" 
-                        Content="Add"
-                        Command="{Binding AddEraCommand}"/>
-                </Grid>
-            </TabItem>
         </TabControl>
     </Grid>
 </Window>

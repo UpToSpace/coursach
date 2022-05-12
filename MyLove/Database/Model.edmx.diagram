@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a79274027ba14a4085ce0d7e0dad2d0d" Name="Diagram1">
+        <EntityTypeShape EntityType="coursachModel.Admin" Width="1.5" PointX="5.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="coursachModel.Era" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="coursachModel.Feedback" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="coursachModel.Travel" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="coursachModel.User_" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="coursachModel.FK__Travel__EraId__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="coursachModel.FK__Feedback__Userna__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="coursachModel.FK__Travel__Username__3C69FB99" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

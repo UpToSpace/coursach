@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyLove.Database;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -10,15 +11,15 @@ namespace MyLove.Models
     class RegistrationModel
     {
         private DbSet<User_> users;
-        private DbSet<Admin_> admins;
+        private DbSet<Admin> admins;
         public RegistrationModel()
         {
             Users = coursachEntities.GetContext().Set<User_>();
-            Admins = coursachEntities.GetContext().Set<Admin_>();
+            Admins = coursachEntities.GetContext().Set<Admin>();
         }
 
         public DbSet<User_> Users { get => users; set => users = value; }
-        public DbSet<Admin_> Admins { get => admins; set => admins = value; }
+        public DbSet<Admin> Admins { get => admins; set => admins = value; }
 
         public void AddUser(User_ user)
         {

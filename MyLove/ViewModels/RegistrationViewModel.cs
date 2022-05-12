@@ -1,4 +1,5 @@
-﻿using MyLove.Infrastructure.Commands;
+﻿using MyLove.Database;
+using MyLove.Infrastructure.Commands;
 using MyLove.Models;
 using MyLove.ViewModels.Base;
 using System;
@@ -35,15 +36,15 @@ namespace MyLove.ViewModels
         {
             foreach (var item in registrationModel.Users)
             {
-                if (Username == item.username)
+                if (Username == item.Username)
                 {
                     MessageBox.Show("The user already exists");
                     return;
                 }
             }
             User_ user = new User_();
-            user.username = Username;
-            user.password = Password;
+            user.Username = Username;
+            user.Password = Password;
             mainWindowViewModel.User = user;
             registrationModel.AddUser(user);
             GoToProfileCommand.Execute("UserProfile");

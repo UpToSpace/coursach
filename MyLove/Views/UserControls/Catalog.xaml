@@ -57,6 +57,5 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </ScrollViewer>
-        <!--<Button Content="Catalog" Height="50" Width="70" Command="{Binding GoToEraPageCommand}" />-->
     </Grid>
 </UserControl>

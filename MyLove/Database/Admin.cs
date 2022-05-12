@@ -7,14 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyLove
+namespace MyLove.Database
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Admin_
+    public partial class Admin
     {
-        public string name { get; set; }
-        public string password { get; set; }
+        public string Name { get; set; }
+        public string Password { get; set; }
     }
 }

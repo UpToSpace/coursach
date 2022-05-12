@@ -7,23 +7,26 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyLove
+namespace MyLove.Database
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class User_
+    public partial class Era
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User_()
+        public Era()
         {
-            this.Travels = new HashSet<Travels>();
+            this.Travel = new HashSet<Travel>();
         }
     
-        public string username { get; set; }
-        public string password { get; set; }
+        public int Id { get; set; }
+        public string PicturePath { get; set; }
+        public string Name { get; set; }
+        public string ShortDescription { get; set; }
+        public string Description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Travels> Travels { get; set; }
+        public virtual ICollection<Travel> Travel { get; set; }
     }
 }

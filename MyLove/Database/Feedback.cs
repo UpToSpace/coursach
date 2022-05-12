@@ -7,25 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyLove
+namespace MyLove.Database
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Question
+    public partial class Feedback
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Question()
-        {
-            this.Answer = new HashSet<Answer>();
-        }
+        public int Id { get; set; }
+        public string Username { get; set; }
+        public string Description { get; set; }
     
-        public int id { get; set; }
-        public string name { get; set; }
-        public Nullable<int> era_id { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Answer> Answer { get; set; }
-        public virtual Era Era { get; set; }
+        public virtual User_ User_ { get; set; }
     }
 }

@@ -32,7 +32,7 @@
                     <Image
                         Grid.Row="0"
                 VerticalAlignment="Top"
-                Source="{Binding picture_path, UpdateSourceTrigger=PropertyChanged}"
+                Source="{Binding PicturePath, UpdateSourceTrigger=PropertyChanged}"
                 Margin="12 12 12 0"/>
                     <Viewbox
                        Grid.Row="1"
@@ -46,7 +46,7 @@
                        HorizontalAlignment="Left"
                        VerticalAlignment="Bottom"
                             x:Name="Name"
-                            Text="{Binding name, UpdateSourceTrigger=PropertyChanged}"/>
+                            Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
                     </Viewbox>
                     <Viewbox
                         Grid.Row="2"
@@ -55,7 +55,7 @@
                         <TextBlock
                    Foreground="#fff"
                    Margin="12 0 2 0"
-                            Text="{Binding description, UpdateSourceTrigger=PropertyChanged}"/>
+                            Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"/>
                     </Viewbox>
                     <Viewbox
                             Grid.Row="3"
@@ -65,57 +65,14 @@
                             Command="{Binding DataContext.ShowEraCommand, RelativeSource={RelativeSource Mode=FindAncestor,
                                 AncestorType={x:Type ItemsControl}}}"
                             CommandParameter="{Binding}">
-                        <TextBlock
+                            <TextBlock
                    Foreground="#fff"
                    Margin="12 0 2 0"
                    HorizontalAlignment="Left"
-                            Text="{Binding id, UpdateSourceTrigger=PropertyChanged}" />
+                            Text="Travel" />
                         </Button>
                     </Viewbox>
-
-                    <!--<Viewbox
-                        Grid.Row="2"
-                        Grid.RowSpan="4"
-                        HorizontalAlignment="Right"
-                                Height="30"
-                        >
-
-                        <StackPanel>
-                            <Image Source="D:\University\4\oop\laba6_7\laba6_7\icons\stars.png" 
-                       Height="21"
-                       Width="27"
-                       VerticalAlignment="Center"
-                           HorizontalAlignment="Right"
-                       Margin="0 0 12 -10"
-                       />
-                            <Label
-                   FontSize="10"
-                   Foreground="#fff"
-                           HorizontalContentAlignment="Right"
-                           Margin="0 0 12 0"
-                          Content="{Binding Path = Rating, UpdateSourceTrigger=PropertyChanged}"
-                   />
-                            <Button
-                            Name="More"
-                                Height="10"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Bottom"
-                            Margin="0 -3 2 0"
-                            Background="Transparent"
-                                Command="{Binding DataContext.OpenCardCommand, RelativeSource={RelativeSource Mode=FindAncestor,
-                                AncestorType={x:Type ItemsControl}}}"
-                                CommandParameter="{Binding}"
-                                >
-                                <Image Source="D:\University\4\oop\laba6_7\laba6_7\icons\more.png" 
-                   Height="7"
-                       HorizontalAlignment="Right"
-                       VerticalAlignment="Bottom"
-                   />
-                            </Button>
-                        </StackPanel>
-                    </Viewbox>-->
                 </Grid>
-
             </Grid>
         </Grid>
     </ControlTemplate>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyLove.Database;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace MyLove.Models
 
         public void AddNewEra(Era era)
         {
-            era.id = eras.Count() + 1;
+            era.Id = eras.Count() + 1;
             eras.Add(era);
             coursachEntities.GetContext().SaveChanges();
         }

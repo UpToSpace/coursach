@@ -21,6 +21,7 @@ namespace MyLove.ViewModels
         {
             loginModel = new LoginModel();
             this.mainWindowViewModel = mainWindowViewModel;
+            mainWindowViewModel.User = null;
             GoToRegistrationCommand = new NavigateCommand(this.mainWindowViewModel);
             GoToProfileCommand = new NavigateCommand(this.mainWindowViewModel);
             CheckDataCommand = new RelayCommand(OnCheckDataCommandExecuted);
@@ -34,7 +35,7 @@ namespace MyLove.ViewModels
         {
             foreach (var item in loginModel.Users)
             {
-                if (Username == item.username && Password == item.password)
+                if (Username == item.Username && Password == item.Password)
                 {
                     mainWindowViewModel.User = item;
                     GoToProfileCommand.Execute("UserProfile");
@@ -42,7 +43,7 @@ namespace MyLove.ViewModels
             }
             foreach (var item in loginModel.Admins)
             {
-                if (Username == item.name && Password == item.password)
+                if (Username == item.Name && Password == item.Password)
                 {
                     GoToProfileCommand.Execute("UserProfile");
                 }

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище coursachModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Era">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="PicturePath" Type="varchar" MaxLength="200" />
+    <Property Name="Name" Type="varchar" MaxLength="40" />
+    <Property Name="ShortDescription" Type="varchar" MaxLength="100" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Feedback">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="20" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Travel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="20" />
+    <Property Name="EraId" Type="int" />
+  </EntityType>
+  <EntityType Name="User_">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Feedback__Userna__403A8C7D">
+    <End Role="User_" Type="Self.User_" Multiplicity="0..1" />
+    <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Feedback">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Travel__EraId__3D5E1FD2">
+    <End Role="Era" Type="Self.Era" Multiplicity="0..1" />
+    <End Role="Travel" Type="Self.Travel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Era">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Travel">
+        <PropertyRef Name="EraId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Travel__Username__3C69FB99">
+    <End Role="User_" Type="Self.User_" Multiplicity="0..1" />
+    <End Role="Travel" Type="Self.Travel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Travel">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище coursachModelContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Era" EntityType="Self.Era" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Feedback" EntityType="Self.Feedback" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Travel" EntityType="Self.Travel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_" EntityType="Self.User_" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Feedback__Userna__403A8C7D" Association="Self.FK__Feedback__Userna__403A8C7D">
+      <End Role="User_" EntitySet="User_" />
+      <End Role="Feedback" EntitySet="Feedback" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Travel__EraId__3D5E1FD2" Association="Self.FK__Travel__EraId__3D5E1FD2">
+      <End Role="Era" EntitySet="Era" />
+      <End Role="Travel" EntitySet="Travel" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Travel__Username__3C69FB99" Association="Self.FK__Travel__Username__3C69FB99">
+      <End Role="User_" EntitySet="User_" />
+      <End Role="Travel" EntitySet="Travel" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

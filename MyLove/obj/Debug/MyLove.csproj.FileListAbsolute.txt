@@ -98,3 +98,7 @@ D:\University\coursach\MyLove\MyLove\obj\Debug\Views\UserControls\UserProfile.g.
 D:\University\coursach\MyLove\MyLove\obj\Debug\Views\UserControls\UserProfile.baml
 D:\University\coursach\MyLove\MyLove\obj\Debug\Views\Templates\Card.baml
 D:\University\coursach\MyLove\MyLove\obj\Debug\MyLove_Content.g.cs
+D:\University\coursach\MyLove\MyLove\obj\Debug\Views\Templates\Travel.baml
+D:\University\coursach\MyLove\MyLove\obj\Debug\Views\UserControls\Feedbacks.g.cs
+D:\University\coursach\MyLove\MyLove\obj\Debug\Views\UserControls\Feedbacks.baml
+D:\University\coursach\MyLove\MyLove\obj\Debug\Views\Templates\Feedback.baml

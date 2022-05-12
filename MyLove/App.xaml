@@ -13,6 +13,8 @@
                 <ResourceDictionary Source="./Views/Themes/DarkTheme.xaml" />
                 <ResourceDictionary Source="./Views/Languages/En.xaml" />
                 <ResourceDictionary Source="./Views/Templates/Card.xaml" />
+                <ResourceDictionary Source="./Views/Templates/Travel.xaml" />
+                <ResourceDictionary Source="./Views/Templates/Feedback.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

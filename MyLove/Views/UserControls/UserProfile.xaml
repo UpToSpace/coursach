@@ -5,20 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MyLove.Views.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="650" d:DesignWidth="800"
              FontFamily="{StaticResource Philosopher}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*" />
             <RowDefinition Height="2*" />
             <RowDefinition Height="0.5*" />
-            <RowDefinition Height="1.5*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="1.5*" />
-            <RowDefinition Height="3*" />
+            <RowDefinition Height="11*" />
             <RowDefinition Height="0.5*" />
-            <RowDefinition Height="3*" />
-            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         
         <DockPanel Grid.Row="1">
@@ -28,7 +23,7 @@
                 Margin="0 0 5 0"/>
             <TextBlock
                 DockPanel.Dock="Left"
-                Text="{Binding Path=User.username}"
+                Text="{Binding Path=User.Username}"
                 />
             <Button 
                 DockPanel.Dock="Right"
@@ -38,6 +33,27 @@
                 CommandParameter="Login"
                 />
         </DockPanel>
-        
+        <ScrollViewer
+            Grid.Row="3"
+            VerticalScrollBarVisibility="Auto">
+            <ItemsControl 
+                ItemsSource="{Binding Travels}"
+                          >
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel ItemWidth="300" 
+                       Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border>
+                            <ContentControl Template="{DynamicResource Travel}"
+                                            />
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
     </Grid>
 </UserControl>

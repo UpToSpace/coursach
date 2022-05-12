@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="MyLove.Views.UserControls.Feedbacks"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyLove.Views.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ScrollViewer
+            Margin="0 10"
+            Grid.Row="0"
+            VerticalScrollBarVisibility="Auto">
+            <ItemsControl 
+                ItemsSource="{Binding Feedbacks}"
+                          >
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel ItemWidth="300" 
+                       Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border>
+                            <ContentControl Template="{DynamicResource Feedback}"
+                                            />
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <StackPanel
+            Grid.Row="1"
+            Orientation="Horizontal"
+            >
+        <TextBox
+            Grid.Row="1"
+            TextWrapping="Wrap"
+            MinHeight="100"
+            Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"
+            />
+            <Button
+                Content="Add"
+                FontSize="16"
+                Height="50"
+                Margin="0 20"
+                Command="{Binding AddFeedbackCommand}"
+            />
+        </StackPanel>    
+    </Grid>
+</UserControl>

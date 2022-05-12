@@ -1,4 +1,5 @@
-﻿using MyLove.Infrastructure.Commands;
+﻿using MyLove.Database;
+using MyLove.Infrastructure.Commands;
 using MyLove.Models;
 using MyLove.ViewModels.Base;
 using System;
@@ -12,23 +13,30 @@ namespace MyLove.ViewModels
 {
     class UserProfileViewModel : ViewModel
     {
+        private UserProfileModel userProfileModel;
         private User_ user;
         public User_ User { get => user; set => user = value; }
+
+        private List<Travel> travels;
+        public List<Travel> Travels { get => travels; set => Set(ref travels, value); }
+
         private MainWindowViewModel mainWindowViewModel;
         public UserProfileViewModel(MainWindowViewModel mainWindowViewModel)
         {
             this.mainWindowViewModel = mainWindowViewModel;
-           UserProfileModel userProfileModel = new UserProfileModel(mainWindowViewModel);
+           userProfileModel = new UserProfileModel(mainWindowViewModel);
            GoToLoginPageCommand = new NavigateCommand(mainWindowViewModel);
             LogoutCommand = new RelayCommand(OnLogoutCommandCommandExecuted);
            User = mainWindowViewModel.User;
+           Travels = userProfileModel.GetTravels(User).ToList();
         }
 
         public ICommand GoToLoginPageCommand { get; }
         public ICommand LogoutCommand { get; }
+
+
         private void OnLogoutCommandCommandExecuted(object o)
         {
-            mainWindowViewModel.User = null;
             GoToLoginPageCommand.Execute("Login");
         }
     }

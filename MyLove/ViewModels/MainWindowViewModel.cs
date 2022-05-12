@@ -1,4 +1,5 @@
-﻿using MyLove.Infrastructure.Commands;
+﻿using MyLove.Database;
+using MyLove.Infrastructure.Commands;
 using MyLove.Models;
 using MyLove.ViewModels.Base;
 using System;
@@ -41,8 +42,18 @@ namespace MyLove.ViewModels
 
         #endregion
 
+        private ViewModel feedbacksViewModel;
+        public ViewModel FeedbacksViewModel
+        {
+            get => feedbacksViewModel;
+            set
+            {
+                Set(ref feedbacksViewModel, value);
+            }
+        }
+
         public Era Era { get => era; set => Set(ref era, value); }
-        public User_ User { get => user; set => user = value; }
+        public User_ User { get => user; set => Set(ref user, value); }
         public Era NewEra { get => newEra; set => Set(ref newEra, value); }
 
         public MainWindowViewModel()
@@ -51,6 +62,7 @@ namespace MyLove.ViewModels
 
             ProfileCurrentViewModel = new LoginViewModel(this);
             CatalogCurrentViewModel = new CatalogViewModel(this);
+            FeedbacksViewModel = new FeedbacksViewModel(this);
 
             newEra = new Era();
             AddEraCommand = new RelayCommand(OnAddEraCommandExecuted);
