@@ -16,21 +16,28 @@
             <RowDefinition Height="0.5*" />
         </Grid.RowDefinitions>
         
-        <DockPanel Grid.Row="1">
+        <DockPanel 
+            Grid.Row="1"
+            Width="Auto">
             <TextBlock
                 DockPanel.Dock="Left"
                 Text="{DynamicResource Hello}"
+                FontSize="24"
+                VerticalAlignment="Center"
                 Margin="0 0 5 0"/>
             <TextBlock
                 DockPanel.Dock="Left"
+                FontSize="24"
+                VerticalAlignment="Center"
                 Text="{Binding Path=User.Username}"
                 />
             <Button 
                 DockPanel.Dock="Right"
+                HorizontalAlignment="Right"
                 FontSize="24"
                 Content="LOG OUT" 
-                Command="{Binding LogoutCommand}"
-                CommandParameter="Login"
+                Command="{Binding GoToLoginPageCommand}"
+                CommandParameter="Logout"
                 />
         </DockPanel>
         <ScrollViewer

@@ -26,18 +26,10 @@ namespace MyLove.ViewModels
             this.mainWindowViewModel = mainWindowViewModel;
            userProfileModel = new UserProfileModel(mainWindowViewModel);
            GoToLoginPageCommand = new NavigateCommand(mainWindowViewModel);
-            LogoutCommand = new RelayCommand(OnLogoutCommandCommandExecuted);
            User = mainWindowViewModel.User;
            Travels = userProfileModel.GetTravels(User).ToList();
         }
 
         public ICommand GoToLoginPageCommand { get; }
-        public ICommand LogoutCommand { get; }
-
-
-        private void OnLogoutCommandCommandExecuted(object o)
-        {
-            GoToLoginPageCommand.Execute("Login");
-        }
     }
 }

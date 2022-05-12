@@ -7,6 +7,7 @@
     <v:String x:Key="ChangeLanguage">Choose your language</v:String>
     <v:String x:Key="Main">Main</v:String>
     <v:String x:Key="Profile">Profile</v:String>
+    <v:String x:Key="Feedbacks">Feedbacks</v:String>
     <v:String x:Key="Settings">Settings</v:String>
     <v:String x:Key="New">New</v:String>
     <v:String x:Key="Login">LOG IN</v:String>

@@ -7,43 +7,53 @@
         <Setter Property="Foreground" Value="#fff" />
     </Style>
 
-    <Style TargetType="{x:Type TabItem}">
+    <Style x:Key="RadioButton" TargetType="RadioButton" BasedOn="{StaticResource RadioButtonBase}">
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type TabItem}">
-                    <Grid>
-                        <Border Name="Border" Margin="0" Background="Transparent"
-                  BorderThickness="0">
-                            <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center"
-                              HorizontalAlignment="Center"
-                              ContentSource="Header" Margin="12,2,12,2"
-                              RecognizesAccessKey="True"
-                              TextBlock.Foreground="#fff"
-                              TextBlock.FontSize="16"
-                              >
-                            </ContentPresenter>
-                        </Border>
-                    </Grid>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Panel.ZIndex" Value="100" />
-                            <Setter TargetName="Border" Property="BorderBrush" Value="#FF8474" />
-                            <Setter TargetName="Border" Property="BorderThickness" Value="0,0,0,4" />
-                        </Trigger>
-                        <!--<Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="Border" Property="Background" Value="DarkRed" />
-                            <Setter TargetName="Border" Property="BorderBrush" Value="Black" />
-                            <Setter Property="Foreground" Value="DarkGray" />
-                        </Trigger>-->
-                    </ControlTemplate.Triggers>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                    </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type RadioButton}">
+                            <Border
+                            BorderBrush="#FF8474"
+                                BorderThickness="0, 0, 0, 4">
+                                <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type RadioButton}">
+                            <Border
+                            BorderBrush="Transparent"
+                                BorderThickness="0, 0, 0, 4">
+                                <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
 
-    <Style x:Key="TabControl" TargetType="TabControl" BasedOn="{StaticResource TabControlBase}">
-        <Setter Property="Background" Value="#060535" />
-        <Setter Property="Foreground" Value="#fff" />
     </Style>
 
     <Style TargetType="{x:Type TextBlock}">

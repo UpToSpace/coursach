@@ -14,6 +14,37 @@
     <Window.DataContext>
         <vm:MainWindowViewModel />
     </Window.DataContext>
+    
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:MainViewModel}">
+            <uc:Main />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:CatalogViewModel}">
+            <uc:Catalog />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:NewViewModel}">
+            <uc:New />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:EraViewModel}">
+            <uc:Era />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:LoginViewModel}">
+            <uc:Login />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:RegistrationViewModel}">
+            <uc:Registration />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:UserProfileViewModel}">
+            <uc:UserProfile />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:FeedbacksViewModel}">
+            <uc:Feedbacks />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
+            <uc:Settings />
+        </DataTemplate>
+    </Window.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -22,184 +53,50 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
             <RowDefinition Height="30*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <TabControl 
-            Grid.Column="1"
+
+        <StackPanel
             Grid.Row="1"
-            Style="{DynamicResource TabControl}"
-            >
-            <TabItem 
-                Header="{DynamicResource Main}" Height="27" Margin="0,0,0.2,0" VerticalAlignment="Top"
-                >
-            </TabItem>
-            <TabItem Header="{DynamicResource Catalog}">
-                <TabItem.Resources>
-                    <DataTemplate DataType="{x:Type vm:CatalogViewModel}">
-                        <uc:Catalog />
-                    </DataTemplate>
-                    <DataTemplate DataType="{x:Type vm:EraViewModel}">
-                        <uc:Era />
-                    </DataTemplate>
-                </TabItem.Resources>
-
-                <ContentControl Content="{Binding CatalogCurrentViewModel}" />
-            </TabItem>
-
-            <TabItem Header="{DynamicResource New}">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="2*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="2*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="2*" />
-                        <RowDefinition Height="5*" />
-                        <RowDefinition Height="3*" />
-                    </Grid.RowDefinitions>
-                    <TextBlock 
-                    Grid.Row="0"
-                    Text="CREATE NEW ERA"
-                        FontSize="24"/>
-                    <Button
-                        Grid.Row="1" 
-                        Content="Add Picture"/>
-                    <TextBlock 
-                        Grid.Row="2"
-                        VerticalAlignment="Bottom"
-                        Margin="0,0,270,0"
-                        Text="Name" />
-                    <TextBox
-                        Grid.Row="3"
-                        Text="{Binding NewEra.Name, UpdateSourceTrigger=PropertyChanged}"
-                        />
-                    <TextBlock
-                        Grid.Row="4"
-                        Margin="0,0,270,0"
-                        VerticalAlignment="Bottom"
-                        Text="Description" />
-                    <TextBox
-                        Grid.Row="5"
-                        Text="{Binding NewEra.ShortDescription, UpdateSourceTrigger=PropertyChanged}"
-                        />
-                    <TextBox
-                        Grid.Row="6"
-                        VerticalContentAlignment="Stretch"
-                        TextWrapping="Wrap" 
-                        Height="Auto"
-                        />
-                    <Button
-                        Grid.Row="7" 
-                        Content="Add"
-                        Command="{Binding AddEraCommand}"/>
-                </Grid>
-            </TabItem>
-
-            <TabItem Header="{DynamicResource Profile}">
-                <TabItem.Resources>
-                    <DataTemplate DataType="{x:Type vm:LoginViewModel}">
-                        <uc:Login />
-                    </DataTemplate>
-                    <DataTemplate DataType="{x:Type vm:RegistrationViewModel}">
-                        <uc:Registration />
-                    </DataTemplate>
-                    <DataTemplate DataType="{x:Type vm:UserProfileViewModel}">
-                        <uc:UserProfile />
-                    </DataTemplate>
-                </TabItem.Resources>
-
-                <ContentControl Content="{Binding ProfileCurrentViewModel}" />
-            </TabItem>
-
-            <TabItem Header="Feedbacks">
-                <TabItem.Resources>
-                    <DataTemplate DataType="{x:Type vm:FeedbacksViewModel}">
-                        <uc:Feedbacks />
-                    </DataTemplate>
-                </TabItem.Resources>
-
-                <ContentControl Content="{Binding FeedbacksViewModel}" />
-                
-            </TabItem>
-
-            <TabItem Header="{DynamicResource Settings}">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="2*" />
-                    </Grid.RowDefinitions>
-
-                    <TextBlock
-                        Grid.Column="0"
-                        Grid.ColumnSpan="2"
-                        Grid.Row="0"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Text="{DynamicResource ChangeThemeLanguage}" />
-                    <TextBlock
-                        Grid.Column="0"
-                        Grid.Row="1"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Text="{DynamicResource ChangeLanguage}" />
-                    <StackPanel
-                        Grid.Row="2"
-                        Grid.Column="0"
-                        Orientation="Horizontal"
-                        HorizontalAlignment="Center">
-                        <Button
-                            Width="50"
-                            Height="50"
-                            Margin="5"
-                            Background="#000"
-                            Command="{Binding ChangeLanguageCommand}"
-                            CommandParameter="EN"/>
-                        <Button
-                            Width="50"
-                            Height="50"
-                            Margin="5"
-                            Background="#fff"
-                            Command="{Binding ChangeLanguageCommand}"
-                            CommandParameter="RU"/>
-                    </StackPanel>
-                    <TextBlock
-                        Grid.Column="1"
-                        Grid.Row="1"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Text="{DynamicResource ChangeTheme}" />
-                    <StackPanel
-                        Grid.Row="2"
-                        Grid.Column="1"
-                        Orientation="Horizontal"
-                        HorizontalAlignment="Center">
-                        <Button
-                            Width="50"
-                            Height="50"
-                            Margin="5"
-                            Background="#000"
-                            Command="{Binding ChangeThemeCommand}"
-                            CommandParameter="Dark"/>
-                        <Button
-                            Width="50"
-                            Height="50"
-                            Margin="5"
-                            Background="#fff"
-                            Command="{Binding ChangeThemeCommand}"
-                            CommandParameter="Light"/>
-                    </StackPanel>
-                </Grid>
-            </TabItem>
-
-        </TabControl>
+            Grid.Column="1"
+            Orientation="Horizontal">
+            <RadioButton
+                Style="{DynamicResource RadioButton}"
+                Content="{DynamicResource Main}"
+                Command="{Binding GoToPageCommand}"
+                CommandParameter="Main"/>
+            <RadioButton
+                Style="{DynamicResource RadioButton}"
+                Content="{DynamicResource Catalog}"
+                Command="{Binding GoToPageCommand}"
+                CommandParameter="Catalog"/>
+            <RadioButton
+                Style="{DynamicResource RadioButton}"
+                Content="{DynamicResource New}"
+                Command="{Binding GoToPageCommand}"
+                CommandParameter="New"/>
+            <RadioButton
+                Style="{DynamicResource RadioButton}"
+                Content="{DynamicResource Profile}"
+                Command="{Binding GoToPageCommand}"
+                CommandParameter="Login"/>
+            <RadioButton
+                Style="{DynamicResource RadioButton}"
+                Content="{DynamicResource Feedbacks}"
+                Command="{Binding GoToPageCommand}"
+                CommandParameter="Feedbacks"/>
+            <RadioButton
+                Style="{DynamicResource RadioButton}"
+                Content="{DynamicResource Settings}"
+                Command="{Binding GoToPageCommand}"
+                CommandParameter="Settings"/>
+        </StackPanel>
+        
+        <ContentControl
+            Grid.Row="2"
+            Grid.Column="1"
+            Content="{Binding CurrentViewModel}" />
     </Grid>
 </Window>

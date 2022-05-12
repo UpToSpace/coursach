@@ -37,13 +37,15 @@
         <ScrollViewer
             Margin="0 10"
             Grid.Row="2"
-            VerticalScrollBarVisibility="Auto">
+            VerticalScrollBarVisibility="Auto"
+            HorizontalScrollBarVisibility="Disabled">
             <ItemsControl 
                 x:Name="PictureList" ItemsSource="{Binding Eras}"
                           >
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <WrapPanel ItemWidth="300" 
+                        <WrapPanel ItemWidth="300"
+                            HorizontalAlignment="Center" 
                        Orientation="Horizontal"/>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>

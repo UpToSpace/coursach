@@ -15,7 +15,6 @@ namespace MyLove.Infrastructure.Commands
 		public event EventHandler CanExecuteChanged;
 
 		private MainWindowViewModel viewModel;
-
 		public NavigateCommand(MainWindowViewModel viewModel)
 		{
 			this.viewModel = viewModel;
@@ -27,20 +26,41 @@ namespace MyLove.Infrastructure.Commands
 		{
 			switch(parameter as string)
             {
-				case "Login":
-					viewModel.ProfileCurrentViewModel = new LoginViewModel(viewModel);
-					break;
-				case "Registration":
-					viewModel.ProfileCurrentViewModel = new RegistrationViewModel(viewModel);
-					break;
-				case "UserProfile":
-					viewModel.ProfileCurrentViewModel = new UserProfileViewModel(viewModel);
+				case "Main":
+					viewModel.CurrentViewModel = new MainViewModel(viewModel);
 					break;
 				case "Catalog":
-					viewModel.CatalogCurrentViewModel = new CatalogViewModel(viewModel);
+					viewModel.CurrentViewModel = new CatalogViewModel(viewModel);
 					break;
 				case "Era":
-					viewModel.CatalogCurrentViewModel = new EraViewModel(viewModel);
+					viewModel.CurrentViewModel = new EraViewModel(viewModel);
+					break;
+				case "New":
+					viewModel.CurrentViewModel = new NewViewModel(viewModel);
+					break;
+				case "Login":
+					if (viewModel.User == null)
+                    {
+						viewModel.CurrentViewModel = new LoginViewModel(viewModel);
+						break;
+                    }
+					viewModel.CurrentViewModel = new UserProfileViewModel(viewModel);
+					break;
+				case "Registration":
+					viewModel.CurrentViewModel = new RegistrationViewModel(viewModel);
+					break;
+				case "UserProfile":
+					viewModel.CurrentViewModel = new UserProfileViewModel(viewModel);
+					break;
+				case "Logout":
+					viewModel.User = null;
+					viewModel.CurrentViewModel = new LoginViewModel(viewModel);
+					break;
+				case "Feedbacks":
+					viewModel.CurrentViewModel = new FeedbacksViewModel(viewModel);
+					break;
+				case "Settings":
+					viewModel.CurrentViewModel = new SettingsViewModel(viewModel);
 					break;
                 default:
                     break;
