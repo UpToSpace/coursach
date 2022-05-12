@@ -31,6 +31,12 @@
                 VerticalAlignment="Center"
                 Text="{Binding Path=User.Username}"
                 />
+            <TextBlock
+                DockPanel.Dock="Left"
+                FontSize="24"
+                VerticalAlignment="Center"
+                Text="{Binding Path=Admin.Name}"
+                />
             <Button 
                 DockPanel.Dock="Right"
                 HorizontalAlignment="Right"

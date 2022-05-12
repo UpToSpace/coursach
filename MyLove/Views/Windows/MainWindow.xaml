@@ -7,8 +7,10 @@
         xmlns:System="clr-namespace:System;assembly=mscorlib"
         xmlns:vm="clr-namespace:MyLove.ViewModels" 
         xmlns:uc="clr-namespace:MyLove.Views.UserControls"
+        xmlns:conv="clr-namespace:MyLove.Infrastructure.Converters"
         mc:Ignorable="d"
         ResizeMode="CanResize"
+        Icon="D:\University\coursach\MyLove\MyLove\DesignElements\Icons\logo.png"
         Style="{DynamicResource MainWindow}"
         >
     <Window.DataContext>
@@ -43,6 +45,8 @@
         <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
             <uc:Settings />
         </DataTemplate>
+        <conv:IsAdminConverter x:Key="IsAdminConverter" />
+        <conv:IsUserConverter x:Key="IsUserConverter" />
     </Window.Resources>
     
     <Grid>
@@ -64,31 +68,39 @@
             Orientation="Horizontal">
             <RadioButton
                 Style="{DynamicResource RadioButton}"
+                FontFamily="{StaticResource Philosopher}"
                 Content="{DynamicResource Main}"
                 Command="{Binding GoToPageCommand}"
-                CommandParameter="Main"/>
+                CommandParameter="Main"
+                IsChecked="True"/>
             <RadioButton
                 Style="{DynamicResource RadioButton}"
+                FontFamily="{StaticResource Philosopher}"
                 Content="{DynamicResource Catalog}"
                 Command="{Binding GoToPageCommand}"
                 CommandParameter="Catalog"/>
             <RadioButton
+                Visibility="{Binding Admin, Converter={StaticResource IsAdminConverter}}"
+                FontFamily="{StaticResource Philosopher}"
                 Style="{DynamicResource RadioButton}"
                 Content="{DynamicResource New}"
                 Command="{Binding GoToPageCommand}"
                 CommandParameter="New"/>
             <RadioButton
                 Style="{DynamicResource RadioButton}"
+                FontFamily="{StaticResource Philosopher}"
                 Content="{DynamicResource Profile}"
                 Command="{Binding GoToPageCommand}"
                 CommandParameter="Login"/>
             <RadioButton
                 Style="{DynamicResource RadioButton}"
+                FontFamily="{StaticResource Philosopher}"
                 Content="{DynamicResource Feedbacks}"
                 Command="{Binding GoToPageCommand}"
                 CommandParameter="Feedbacks"/>
             <RadioButton
                 Style="{DynamicResource RadioButton}"
+                FontFamily="{StaticResource Philosopher}"
                 Content="{DynamicResource Settings}"
                 Command="{Binding GoToPageCommand}"
                 CommandParameter="Settings"/>

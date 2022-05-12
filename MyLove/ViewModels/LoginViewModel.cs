@@ -3,9 +3,11 @@ using MyLove.Models;
 using MyLove.ViewModels.Base;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace MyLove.ViewModels
@@ -45,9 +47,15 @@ namespace MyLove.ViewModels
             {
                 if (Username == item.Name && Password == item.Password)
                 {
+                    mainWindowViewModel.Admin = item;
                     GoToProfileCommand.Execute("UserProfile");
                 }
             }
+            if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password))
+            {
+                MessageBox.Show("Fields are empty");
+            }
+            MessageBox.Show("This user not exists");
         }
         public string Username
         {

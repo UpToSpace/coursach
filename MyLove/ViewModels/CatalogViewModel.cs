@@ -16,6 +16,7 @@ namespace MyLove.ViewModels
     {
         private CatalogModel catalogModel;
         private ObservableCollection<Era> eras;
+        private User_ user;
         private MainWindowViewModel mainWindowViewModel;
         public ObservableCollection<Era> Eras 
         {
@@ -29,9 +30,11 @@ namespace MyLove.ViewModels
             GoToEraPageCommand = new NavigateCommand(mainWindowViewModel);
             ShowEraCommand = new RelayCommand(OnCheckDataCommandExecuted);
             eras = new ObservableCollection<Era>(catalogModel.Eras);
+            User = mainWindowViewModel.User;
         }
         public ICommand GoToEraPageCommand { get; }
         public ICommand ShowEraCommand { get; }
+        public User_ User { get => user; set => Set(ref user, value); }
 
         private string searchText;
         public string SearchText

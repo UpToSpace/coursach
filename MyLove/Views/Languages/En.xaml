@@ -17,4 +17,10 @@
     <v:String x:Key="NewAccount">New Account</v:String>
     <v:String x:Key="BacktoLogIn">Back to Log In</v:String>
     <v:String x:Key="Hello">Hello,</v:String>
+    <v:String x:Key="Dark">Dark</v:String>
+    <v:String x:Key="Light">Light</v:String>
+    <!--<v:String x:Key="Hello">Hello,</v:String>
+    <v:String x:Key="Hello">Hello,</v:String>
+    <v:String x:Key="Hello">Hello,</v:String>
+    <v:String x:Key="Hello">Hello,</v:String>-->
 </ResourceDictionary>

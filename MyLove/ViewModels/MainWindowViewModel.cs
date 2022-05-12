@@ -16,6 +16,7 @@ namespace MyLove.ViewModels
     {
         private MainWindowModel mainWindowModel;
         private User_ user;
+        private Admin admin;
         private Era era;
 
         #region Navigation
@@ -34,6 +35,7 @@ namespace MyLove.ViewModels
 
         public Era Era { get => era; set => Set(ref era, value); }
         public User_ User { get => user; set => Set(ref user, value); }
+        public Admin Admin { get => admin; set => Set(ref admin, value); }
 
 
         public MainWindowViewModel()

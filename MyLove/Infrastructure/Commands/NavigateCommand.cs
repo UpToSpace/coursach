@@ -39,7 +39,7 @@ namespace MyLove.Infrastructure.Commands
 					viewModel.CurrentViewModel = new NewViewModel(viewModel);
 					break;
 				case "Login":
-					if (viewModel.User == null)
+					if (viewModel.User == null && viewModel.Admin == null)
                     {
 						viewModel.CurrentViewModel = new LoginViewModel(viewModel);
 						break;
@@ -54,6 +54,7 @@ namespace MyLove.Infrastructure.Commands
 					break;
 				case "Logout":
 					viewModel.User = null;
+					viewModel.Admin = null;
 					viewModel.CurrentViewModel = new LoginViewModel(viewModel);
 					break;
 				case "Feedbacks":

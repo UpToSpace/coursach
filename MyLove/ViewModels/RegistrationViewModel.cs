@@ -34,6 +34,11 @@ namespace MyLove.ViewModels
 
         private void OnCheckDataCommandExecuted(object o)
         {
+            if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password))
+            {
+                MessageBox.Show("The fields are empty");
+                return;
+            }
             foreach (var item in registrationModel.Users)
             {
                 if (Username == item.Username)
@@ -45,6 +50,7 @@ namespace MyLove.ViewModels
             User_ user = new User_();
             user.Username = Username;
             user.Password = Password;
+            //todo validation
             mainWindowViewModel.User = user;
             registrationModel.AddUser(user);
             GoToProfileCommand.Execute("UserProfile");
