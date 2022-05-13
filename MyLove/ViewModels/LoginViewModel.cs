@@ -1,13 +1,15 @@
-﻿using MyLove.Infrastructure.Commands;
+﻿using MyLove.Database;
+using MyLove.Infrastructure.Commands;
 using MyLove.Models;
 using MyLove.ViewModels.Base;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
+using System.Windows.Forms;
 using System.Windows.Input;
 
 namespace MyLove.ViewModels
@@ -35,12 +37,30 @@ namespace MyLove.ViewModels
 
         private void OnCheckDataCommandExecuted(object o)
         {
+            User_ user = new User_();
+            user.Username = Username;
+            user.Password = Password;
+            ValidationContext contex = new ValidationContext(user, null, null);
+            List<ValidationResult> errors = new List<ValidationResult>();
+            if (!Validator.TryValidateObject(user, contex, errors, true))
+            {
+                foreach (var item in errors)
+                {
+                    MessageBox.Show(item.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            SHA256Managed hasher = new SHA256Managed();
+            byte[] hashed = hasher.ComputeHash(Convert.FromBase64String(Password));
+            string hashedPassword = Convert.ToBase64String(hashed);
+
             foreach (var item in loginModel.Users)
             {
-                if (Username == item.Username && Password == item.Password)
+                if (Username == item.Username && hashedPassword == item.Password)
                 {
                     mainWindowViewModel.User = item;
                     GoToProfileCommand.Execute("UserProfile");
+                    return;
                 }
             }
             foreach (var item in loginModel.Admins)
@@ -49,11 +69,8 @@ namespace MyLove.ViewModels
                 {
                     mainWindowViewModel.Admin = item;
                     GoToProfileCommand.Execute("UserProfile");
+                    return;
                 }
-            }
-            if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password))
-            {
-                MessageBox.Show("Fields are empty");
             }
             MessageBox.Show("This user not exists");
         }

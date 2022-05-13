@@ -20,7 +20,7 @@
             Grid.Row="1"
             HorizontalAlignment="Center"
             FontSize="22"
-            Text="The Best history enthiclopedia in the world!" />
+            Text="{DynamicResource TheBest}" />
         <Image
             Grid.Row="1"
             HorizontalAlignment="Right"

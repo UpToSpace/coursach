@@ -19,8 +19,8 @@
     <v:String x:Key="Hello">Hello,</v:String>
     <v:String x:Key="Dark">Dark</v:String>
     <v:String x:Key="Light">Light</v:String>
-    <!--<v:String x:Key="Hello">Hello,</v:String>
-    <v:String x:Key="Hello">Hello,</v:String>
-    <v:String x:Key="Hello">Hello,</v:String>
-    <v:String x:Key="Hello">Hello,</v:String>-->
+    <v:String x:Key="ToCatalog">To Catalog</v:String>
+    <v:String x:Key="Go">Go</v:String>
+    <v:String x:Key="Add">Add</v:String>
+    <v:String x:Key="TheBest">The best history encyclopedia in the world!</v:String>
 </ResourceDictionary>

@@ -11,7 +11,8 @@ namespace MyLove.Database
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class User_
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,8 +21,9 @@ namespace MyLove.Database
             this.Feedback = new HashSet<Feedback>();
             this.Travel = new HashSet<Travel>();
         }
-    
+        [Required, RegularExpression("^[A-Za-z][A-Za-z0-9_]{7,29}$", ErrorMessage = "The username must start with a character, contain numbers and be 7+ characters long")]
         public string Username { get; set; }
+        [Required, RegularExpression("^[A-Za-z0-9]{7,29}$", ErrorMessage = "The password must be 7+ characters long and contain only numbers and letters")]
         public string Password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

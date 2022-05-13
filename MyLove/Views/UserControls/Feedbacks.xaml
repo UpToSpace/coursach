@@ -6,8 +6,12 @@
              xmlns:local="clr-namespace:MyLove.Views.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:conv="clr-namespace:MyLove.Infrastructure.Converters"
              FontFamily="{StaticResource Philosopher}">
     <Grid>
+        <Grid.Resources>
+            <conv:IsUserConverter x:Key="IsUserConverter" />
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*" />
             <RowDefinition Height="*" />
@@ -51,17 +55,19 @@
             Width="Auto"
             VerticalAlignment="Stretch"
             Height="Auto"
+            Visibility="{Binding User, Converter={StaticResource IsUserConverter}}"
             Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"
             />
             <Button
                 Grid.Column="1"
-                Content="Add"
+                Content="{DynamicResource Add}"
                 FontSize="16"
-                Height="30"
-                Width="50"
+                Height="40"
+                Width="100"
                 Margin="0 20"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
+                Visibility="{Binding User, Converter={StaticResource IsUserConverter}}"
                 Command="{Binding AddFeedbackCommand}"
             />
         </Grid>    

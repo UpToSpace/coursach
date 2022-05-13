@@ -43,7 +43,13 @@ namespace MyLove.ViewModels
             mainWindowModel = new MainWindowModel();
             CurrentViewModel = new MainViewModel(this);
             GoToPageCommand = new NavigateCommand(this);
+            CloseApplicationCommand = new RelayCommand(OnCloseApplicationCommandExecuted);
         }
         public ICommand GoToPageCommand { get; }
+        public ICommand CloseApplicationCommand { get; }
+        private void OnCloseApplicationCommandExecuted(object o)
+        {
+            Application.Current.MainWindow.Close();
+        }
     }
 }

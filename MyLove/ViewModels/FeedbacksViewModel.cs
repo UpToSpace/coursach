@@ -16,15 +16,18 @@ namespace MyLove.ViewModels
         MainWindowViewModel mainWindowViewModel;
         private FeedbacksModel feedbacksModel;
         private List<Feedback> feedbacks;
+        private User_ user;
         private string description;
         public FeedbacksViewModel(MainWindowViewModel mainWindowViewModel)
         {
             this.mainWindowViewModel = mainWindowViewModel;
+            User = mainWindowViewModel.User;
             feedbacksModel = new FeedbacksModel();
             feedbacks = feedbacksModel.Feedbacks.ToList();
             AddFeedbackCommand = new RelayCommand(OnAddFeedbackCommandExecuted);
         }
 
+        public User_ User { get => user; set => Set(ref user, value); }
         public List<Feedback> Feedbacks { get => feedbacks; set => Set(ref feedbacks, value); }
         public ICommand AddFeedbackCommand { get; }
         public string Description { get => description; set => Set(ref description, value); }
