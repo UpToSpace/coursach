@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Input;
+using Validator = MyLove.Infrastructure.Validator.Validator;
 
 namespace MyLove.ViewModels
 {
@@ -37,32 +38,6 @@ namespace MyLove.ViewModels
 
         private void OnCheckDataCommandExecuted(object o)
         {
-            User_ user = new User_();
-            user.Username = Username;
-            user.Password = Password;
-            ValidationContext contex = new ValidationContext(user, null, null);
-            List<ValidationResult> errors = new List<ValidationResult>();
-            if (!Validator.TryValidateObject(user, contex, errors, true))
-            {
-                foreach (var item in errors)
-                {
-                    MessageBox.Show(item.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-            }
-            SHA256Managed hasher = new SHA256Managed();
-            byte[] hashed = hasher.ComputeHash(Convert.FromBase64String(Password));
-            string hashedPassword = Convert.ToBase64String(hashed);
-
-            foreach (var item in loginModel.Users)
-            {
-                if (Username == item.Username && hashedPassword == item.Password)
-                {
-                    mainWindowViewModel.User = item;
-                    GoToProfileCommand.Execute("UserProfile");
-                    return;
-                }
-            }
             foreach (var item in loginModel.Admins)
             {
                 if (Username == item.Name && Password == item.Password)
@@ -72,7 +47,27 @@ namespace MyLove.ViewModels
                     return;
                 }
             }
-            MessageBox.Show("This user not exists");
+            User_ user = new User_();
+            user.Username = Username;
+            user.Password = Password;
+            if (!Validator.Validate(user))
+            {
+                return;
+            }
+
+            MD5 passwordHasher = MD5.Create();
+            user.Password = Convert.ToBase64String(passwordHasher.ComputeHash(Encoding.UTF8.GetBytes(Password)));
+
+            foreach (var item in loginModel.Users)
+            {
+                if (Username == item.Username && user.Password == item.Password)
+                {
+                    mainWindowViewModel.User = item;
+                    GoToProfileCommand.Execute("UserProfile");
+                    return;
+                }
+            }
+            MessageBox.Show("This user not exists or password is incorrect");
         }
         public string Username
         {

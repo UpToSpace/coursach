@@ -8,9 +8,10 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
+using MyLove.Infrastructure.Validator;
 using System.Windows.Forms;
 using System.Windows.Input;
+using Validator = MyLove.Infrastructure.Validator.Validator;
 
 namespace MyLove.ViewModels
 {
@@ -36,11 +37,6 @@ namespace MyLove.ViewModels
 
         private void OnCheckDataCommandExecuted(object o)
         {
-            //if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password))
-            //{
-            //    MessageBox.Show("The fields are empty");
-            //    return;
-            //}
             foreach (var item in registrationModel.Users)
             {
                 if (Username == item.Username)
@@ -53,15 +49,9 @@ namespace MyLove.ViewModels
             user.Username = Username;
             user.Password = Password;
 
-            ValidationContext contex = new ValidationContext(user, null, null);
-            List<ValidationResult> errors = new List<ValidationResult>();
-            if (!Validator.TryValidateObject(user, contex, errors, true))
+            if (!Validator.Validate(user))
             {
-                foreach (var item in errors)
-                {
-                    MessageBox.Show(item.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+                return;
             }
 
             MD5 passwordHasher = MD5.Create();
@@ -70,6 +60,7 @@ namespace MyLove.ViewModels
             registrationModel.AddUser(user);
             GoToProfileCommand.Execute("UserProfile");
         }
+
         public string Username
         {
             get { return username; }
@@ -78,6 +69,7 @@ namespace MyLove.ViewModels
                 Set(ref username, value);
             }
         }
+
 
         public string Password
         {

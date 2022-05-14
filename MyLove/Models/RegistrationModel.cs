@@ -24,6 +24,7 @@ namespace MyLove.Models
         public void AddUser(User_ user)
         {
             Users.Add(user);
+            coursachEntities.GetContext().Configuration.ValidateOnSaveEnabled = false;
             coursachEntities.GetContext().SaveChanges();
         }
     }

@@ -5,40 +5,40 @@
       <PropertyRef Name="Name" />
     </Key>
     <Property Name="Name" Type="varchar" MaxLength="40" Nullable="false" />
-    <Property Name="Password" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <EntityType Name="Era">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="PicturePath" Type="varchar" MaxLength="200" />
-    <Property Name="Name" Type="varchar" MaxLength="40" />
+    <Property Name="PicturePath" Type="varchar" MaxLength="300" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
     <Property Name="ShortDescription" Type="varchar" MaxLength="100" />
-    <Property Name="Description" Type="varchar" MaxLength="500" />
+    <Property Name="Description" Type="varchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="Feedback">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="Username" Type="varchar" MaxLength="20" />
-    <Property Name="Description" Type="varchar" MaxLength="500" />
+    <Property Name="Username" Type="varchar" MaxLength="40" />
+    <Property Name="Description" Type="varchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="Travel">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="Username" Type="varchar" MaxLength="20" />
+    <Property Name="Username" Type="varchar" MaxLength="40" />
     <Property Name="EraId" Type="int" />
   </EntityType>
   <EntityType Name="User_">
     <Key>
       <PropertyRef Name="Username" />
     </Key>
-    <Property Name="Username" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <Association Name="FK__Feedback__Userna__403A8C7D">
     <End Role="User_" Type="Self.User_" Multiplicity="0..1" />

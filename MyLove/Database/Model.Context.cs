@@ -15,12 +15,11 @@ namespace MyLove.Database
     
     public partial class coursachEntities : DbContext
     {
-        private static coursachEntities context;
-
         public coursachEntities()
             : base("name=coursachEntities")
         {
         }
+        private static coursachEntities context;
 
         public static coursachEntities GetContext()
         {

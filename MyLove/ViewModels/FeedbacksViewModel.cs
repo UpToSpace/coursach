@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Windows.Input;
 
 namespace MyLove.ViewModels
@@ -34,6 +35,11 @@ namespace MyLove.ViewModels
 
         private void OnAddFeedbackCommandExecuted(object o)
         {
+            if (Description.Length > 998)
+            {
+                MessageBox.Show("The length of the comment is too long");
+                return;
+            }
             Feedback feedback = new Feedback();
             feedback.Description = Description;
             feedback.Username = mainWindowViewModel.User.Username;

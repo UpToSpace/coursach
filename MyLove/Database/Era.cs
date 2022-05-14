@@ -12,7 +12,6 @@ namespace MyLove.Database
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-
     public partial class Era
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,13 +21,17 @@ namespace MyLove.Database
         }
     
         public int Id { get; set; }
-        [Required]
+
+        [Required, MaxLength(300)]
         public string PicturePath { get; set; }
-        [Required]
+
+        [Required, MaxLength(100)]
         public string Name { get; set; }
-        [Required]
+
+        [Required, MaxLength(100)]
         public string ShortDescription { get; set; }
-        [Required]
+
+        [Required, MaxLength(1000)]
         public string Description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

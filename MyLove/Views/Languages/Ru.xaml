@@ -1,5 +1,26 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:v="clr-namespace:System;assembly=mscorlib">
-    
+    <v:String x:Key="Catalog">Каталог</v:String>
+    <v:String x:Key="ChangeThemeLanguage">На этой странице вы можете изменить тему и язык</v:String>
+    <v:String x:Key="ChangeTheme">Выберите понравившуюся тему</v:String>
+    <v:String x:Key="ChangeLanguage">Выберите ваш язык</v:String>
+    <v:String x:Key="Main">Главная</v:String>
+    <v:String x:Key="Profile">Профиль</v:String>
+    <v:String x:Key="Feedbacks">Отзывы</v:String>
+    <v:String x:Key="Settings">Настройки</v:String>
+    <v:String x:Key="New">Добавить</v:String>
+    <v:String x:Key="Login">ВХОД</v:String>
+    <v:String x:Key="Username">Имя пользователя</v:String>
+    <v:String x:Key="Password">Пароль</v:String>
+    <v:String x:Key="Or">или</v:String>
+    <v:String x:Key="NewAccount">Новый Аккаунт</v:String>
+    <v:String x:Key="BacktoLogIn">Назад ко входу</v:String>
+    <v:String x:Key="Hello">Привет,</v:String>
+    <v:String x:Key="Dark">Темная</v:String>
+    <v:String x:Key="Light">Светлая</v:String>
+    <v:String x:Key="ToCatalog">В Каталог</v:String>
+    <v:String x:Key="Go">Вперед</v:String>
+    <v:String x:Key="Add">Добавить</v:String>
+    <v:String x:Key="TheBest">Лучшая историческая энциклопедия в мире!</v:String>
 </ResourceDictionary>

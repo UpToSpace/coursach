@@ -46,11 +46,13 @@
             Grid.Row="1"
             >
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="2*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
         <TextBox
-            Grid.Column="0"
+            Grid.Column="1"
             TextWrapping="Wrap"
             Width="Auto"
             VerticalAlignment="Stretch"
@@ -59,7 +61,7 @@
             Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"
             />
             <Button
-                Grid.Column="1"
+                Grid.Column="2"
                 Content="{DynamicResource Add}"
                 FontSize="16"
                 Height="40"

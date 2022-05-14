@@ -280,6 +280,7 @@
     <Compile Include="Infrastructure\Converters\IsAdminConverter.cs" />
     <Compile Include="Infrastructure\Converters\IsGuestConverter.cs" />
     <Compile Include="Infrastructure\Converters\IsUserConverter.cs" />
+    <Compile Include="Infrastructure\Validator\Validator.cs" />
     <Compile Include="Models\CatalogModel.cs" />
     <Compile Include="Models\EraModel.cs" />
     <Compile Include="Models\FeedbacksModel.cs" />
