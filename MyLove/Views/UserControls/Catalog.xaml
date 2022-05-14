@@ -40,7 +40,7 @@
             VerticalScrollBarVisibility="Auto"
             HorizontalScrollBarVisibility="Disabled">
             <ItemsControl 
-                x:Name="PictureList" ItemsSource="{Binding Eras}"
+                x:Name="PictureList" ItemsSource="{Binding Eras, UpdateSourceTrigger=PropertyChanged}"
                           >
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>

@@ -17,10 +17,12 @@ namespace MyLove.ViewModels
         private CatalogModel catalogModel;
         private ObservableCollection<Era> eras;
         private User_ user;
+        private Admin admin;
         private MainWindowViewModel mainWindowViewModel;
         public ObservableCollection<Era> Eras 
         {
             get => eras;
+            set => Set(ref eras, value);
         }
         
         public CatalogViewModel(MainWindowViewModel mainWindowViewModel)
@@ -28,12 +30,15 @@ namespace MyLove.ViewModels
             catalogModel = new CatalogModel();
             this.mainWindowViewModel = mainWindowViewModel;
             GoToEraPageCommand = new NavigateCommand(mainWindowViewModel);
+            DeleteEraCommand = new RelayCommand(OnDeleteEraCommandExecuted);
             ShowEraCommand = new RelayCommand(OnCheckDataCommandExecuted);
             eras = new ObservableCollection<Era>(catalogModel.Eras);
             User = mainWindowViewModel.User;
+            Admin = mainWindowViewModel.Admin;
         }
         public ICommand GoToEraPageCommand { get; }
         public ICommand ShowEraCommand { get; }
+        public ICommand DeleteEraCommand { get; }
         public User_ User { get => user; set => Set(ref user, value); }
 
         private string searchText;
@@ -43,14 +48,22 @@ namespace MyLove.ViewModels
             set
             {
                 Set(ref searchText, value);
-                eras = new ObservableCollection<Era>(catalogModel.Eras.Where(e => e.Name.Contains(SearchText)));
-                OnPropertyChanged("Eras");
+                Eras = new ObservableCollection<Era>(catalogModel.Eras.Where(e => e.Name.Contains(SearchText)));
             }
         }
+
+        public Admin Admin { get => admin; set => admin = value; }
+
         private void OnCheckDataCommandExecuted(object o)
         {
             mainWindowViewModel.Era = o as Era;
             GoToEraPageCommand.Execute("Era");
+        }
+        private void OnDeleteEraCommandExecuted(object o)
+        {
+            Era era = o as Era;
+            catalogModel.DeleteEra(era);
+            Eras = new ObservableCollection<Era>(catalogModel.Eras);
         }
     }
 }

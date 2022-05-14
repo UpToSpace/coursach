@@ -5,6 +5,7 @@
     <ControlTemplate x:Key="Card">
         <ControlTemplate.Resources>
             <conv:IsUserConverter x:Key="IsUserConverter" />
+            <conv:IsAdminConverter x:Key="IsAdminConverter" />
         </ControlTemplate.Resources>
         <Grid Margin="0 0 0 20">
             <Grid.RowDefinitions>
@@ -77,6 +78,25 @@
                    HorizontalAlignment="Center"
                             Text="{DynamicResource Go}" />
                         </Button>
+                    </Viewbox>
+                    <Viewbox
+                        Grid.Row="3"
+                        Height="30"
+                        HorizontalAlignment="Right"
+                        Margin="3">
+                        <Image 
+                                Source="D:\University\coursach\MyLove\MyLove\DesignElements\Icons\delete.png"
+                                Cursor="Hand"
+                                Visibility="{Binding DataContext.Admin, RelativeSource={RelativeSource Mode=FindAncestor,
+                                AncestorType={x:Type ItemsControl}}, Converter={StaticResource IsAdminConverter}}">
+                            <Image.InputBindings>
+                                <MouseBinding 
+                                        Command="{Binding DataContext.DeleteEraCommand, RelativeSource={RelativeSource Mode=FindAncestor,
+                                AncestorType={x:Type ItemsControl}}}"
+                                        CommandParameter="{Binding}"
+                                        Gesture="LeftClick" />
+                            </Image.InputBindings>
+                        </Image>
                     </Viewbox>
                 </Grid>
             </Grid>

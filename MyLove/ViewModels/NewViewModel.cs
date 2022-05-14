@@ -43,6 +43,7 @@ namespace MyLove.ViewModels
             }
             newModel.AddNewEra(NewEra);
             MessageBox.Show("The era successfully added");
+            NewEra = new Era();
         }
         public ICommand AddPictureEraCommand { get; }
         private void OnAddPictureEraCommandExecuted(object o)

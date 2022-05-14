@@ -18,7 +18,7 @@ namespace MyLove.Models
 
         public void AddNewEra(Era era)
         {
-            era.Id = eras.Count() + 1;
+            era.Id = eras.Count() == 0 ? 1 : eras.ToList().Last().Id + 1;
             eras.Add(era);
             coursachEntities.GetContext().SaveChanges();
         }

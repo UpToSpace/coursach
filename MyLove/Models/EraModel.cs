@@ -20,7 +20,7 @@ namespace MyLove.Models
 
         public void AddUserTravel(Travel travel)
         {
-            travel.Id = Travels.Count() + 1;
+            travel.Id = Travels.Count() == 0 ? 1 : Travels.ToList().Last().Id + 1;
             Travels.Add(travel);
             coursachEntities.GetContext().SaveChanges();
         }
