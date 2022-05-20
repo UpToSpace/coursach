@@ -9,39 +9,53 @@
              FontFamily="{StaticResource Philosopher}">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="2*" />
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="1.5*" />
             <RowDefinition Height="0.7*" />
             <RowDefinition Height="2*" />
             <RowDefinition Height="0.7*" />
             <RowDefinition Height="2*" />
             <RowDefinition Height="5*" />
-            <RowDefinition Height="3*" />
+            <RowDefinition Height="4*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="3*" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
         <TextBlock 
-                    Grid.Row="0"
-            Grid.Column="1"
-                    Text="CREATE NEW ERA"
+                    Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+                    Text="{DynamicResource CreateNewEra}"
                         FontSize="24"/>
-        <Button
-            Grid.Row="1" 
-            Grid.Column="1"
-            Content="Add Picture"
+        <StackPanel
+            Orientation="Vertical"
+            Grid.Row="2"
+            Grid.RowSpan="5"
+            Grid.Column="0"
             Height="Auto"
-            Command="{Binding AddPictureEraCommand}"/>
+            Width="Auto"
+            Margin="20 0"
+            VerticalAlignment="Bottom">
+            <Image 
+                Source="{Binding PicturePath, UpdateSourceTrigger=PropertyChanged}"
+                Height="200"
+                Margin="0 0 0 15"/>
+            <Button
+                FontSize="16"
+                Margin="0 0 0 10"
+                Content="{DynamicResource AddPicture}"
+            Command="{Binding AddPictureEraCommand}" />
+        </StackPanel>
         <TextBlock 
                         Grid.Row="2"
                         Grid.Column="1"
                         VerticalAlignment="Bottom"
                         HorizontalAlignment="Left"
-                        Text="Name" />
+                        Text="{DynamicResource Name}" />
         <TextBox Grid.Column="1"
                         Grid.Row="3"
+                 HorizontalAlignment="Stretch"
                         Text="{Binding NewEra.Name, UpdateSourceTrigger=PropertyChanged}"
                         />
         <TextBlock
@@ -49,24 +63,41 @@
                         Grid.Row="4"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Bottom"
-                        Text="Description" />
+                        Text="{DynamicResource Description}" />
         <TextBox
                         Grid.Column="1"
                         Grid.Row="5"
+            HorizontalAlignment="Stretch"
                         Text="{Binding NewEra.ShortDescription, UpdateSourceTrigger=PropertyChanged}"
                         />
         <TextBox
                         Grid.Column="1"
                         Grid.Row="6"
                         VerticalContentAlignment="Stretch"
+            HorizontalAlignment="Stretch"
                         TextWrapping="Wrap" 
                         Height="Auto"
             Text="{Binding NewEra.Description, UpdateSourceTrigger=PropertyChanged}"
                         />
+        <ComboBox
+            Grid.Row="7"
+            Grid.Column="0"
+            Height="30"
+            Width="200"
+            VerticalAlignment="Top"
+            ItemsSource="{Binding Categories}"
+            SelectedItem="{Binding SelectedCategory}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
         <Button
                         Grid.Column="1"
+            HorizontalAlignment="Center"
                         Grid.Row="7" 
-                        Content="Add"
+                        Content="{DynamicResource Add}"
                         Command="{Binding AddEraCommand}"
             CommandParameter="{Binding}"/>
         </Grid>

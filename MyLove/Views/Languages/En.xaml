@@ -22,5 +22,10 @@
     <v:String x:Key="ToCatalog">To Catalog</v:String>
     <v:String x:Key="Go">Go</v:String>
     <v:String x:Key="Add">Add</v:String>
-    <v:String x:Key="TheBest">The best history encyclopedia in the world!</v:String> <!--the last-->
+    <v:String x:Key="TheBest">The best history encyclopedia in the world!</v:String>
+    <v:String x:Key="CreateNewEra">CREATE NEW ERA</v:String>
+    <v:String x:Key="AddPicture">Add Picture</v:String>
+    <v:String x:Key="Name">Name</v:String>
+    <v:String x:Key="Description">Description</v:String>
+    <!--the last-->
 </ResourceDictionary>

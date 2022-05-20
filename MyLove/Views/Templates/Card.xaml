@@ -4,7 +4,7 @@
 
     <ControlTemplate x:Key="Card">
         <ControlTemplate.Resources>
-            <conv:IsUserConverter x:Key="IsUserConverter" />
+            <conv:RoleConverter x:Key="RoleConverter" />
             <conv:IsAdminConverter x:Key="IsAdminConverter" />
         </ControlTemplate.Resources>
         <Grid Margin="0 0 0 20">
@@ -26,7 +26,6 @@
                 Background="#726CCD"
                 >
                 <Grid x:Name="GridPicture">
-
                     <Grid.RowDefinitions>
                         <RowDefinition Height="8*" />
                         <RowDefinition Height="*" />
@@ -64,11 +63,20 @@
                     </Viewbox>
                     <Viewbox
                         Grid.Row="3"
+                                Height="20"
+                        HorizontalAlignment="Left">
+                        <TextBlock
+                   Foreground="#fff"
+                   Margin="12 0 2 0"
+                            Text="{Binding StringFormat=Категория: {0}, Path=Category, UpdateSourceTrigger=PropertyChanged}"/>
+                    </Viewbox>
+                    <Viewbox
+                        Grid.Row="4"
                         Height="30"
                         HorizontalAlignment="Center">
                         <Button 
-                            Visibility="{Binding DataContext.User, RelativeSource={RelativeSource Mode=FindAncestor,
-                                AncestorType={x:Type ItemsControl}}, Converter={StaticResource IsUserConverter}}"
+                            Visibility="{Binding DataContext.Role, RelativeSource={RelativeSource Mode=FindAncestor,
+                                AncestorType={x:Type ItemsControl}}, Converter={StaticResource RoleConverter}}"
                             Command="{Binding DataContext.ShowEraCommand, RelativeSource={RelativeSource Mode=FindAncestor,
                                 AncestorType={x:Type ItemsControl}}}"
                             CommandParameter="{Binding}">
@@ -79,15 +87,16 @@
                             Text="{DynamicResource Go}" />
                         </Button>
                     </Viewbox>
-                    <Viewbox
-                        Grid.Row="3"
+                    <StackPanel
+                        Orientation="Horizontal"
+                        Grid.Row="4"
                         Height="30"
                         HorizontalAlignment="Right"
                         Margin="3">
                         <Image 
                                 Source="D:\University\coursach\MyLove\MyLove\DesignElements\Icons\delete.png"
                                 Cursor="Hand"
-                                Visibility="{Binding DataContext.Admin, RelativeSource={RelativeSource Mode=FindAncestor,
+                                Visibility="{Binding DataContext.Role, RelativeSource={RelativeSource Mode=FindAncestor,
                                 AncestorType={x:Type ItemsControl}}, Converter={StaticResource IsAdminConverter}}">
                             <Image.InputBindings>
                                 <MouseBinding 
@@ -97,7 +106,7 @@
                                         Gesture="LeftClick" />
                             </Image.InputBindings>
                         </Image>
-                    </Viewbox>
+                    </StackPanel>
                 </Grid>
             </Grid>
         </Grid>

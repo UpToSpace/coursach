@@ -9,15 +9,15 @@ using System.Windows.Data;
 
 namespace MyLove.Infrastructure.Converters
 {
-    class IsAdminConverter : IValueConverter
+    class RoleConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if ((Roles.Roles)value == Roles.Roles.Admin)
+            if((Roles.Roles)value == Roles.Roles.Guest)
             {
-                return Visibility.Visible;
+                return Visibility.Collapsed;
             }
-            return Visibility.Collapsed;
+            return Visibility.Visible;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

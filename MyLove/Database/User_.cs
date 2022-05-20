@@ -25,6 +25,7 @@ namespace MyLove.Database
         [Required, RegularExpression("^[A-Za-z][A-Za-z0-9_]{3,10}$", ErrorMessage = "The username must start with a character, contain numbers and be 5-10 characters long")]
         public string Username { get; set; }
 
+
         [Required, RegularExpression("^[A-Za-z0-9]{5,10}$", ErrorMessage = "The password must be 6-10 characters long and contain only numbers and letters")]
         public string Password { get; set; }
     

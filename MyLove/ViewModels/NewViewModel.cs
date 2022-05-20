@@ -18,13 +18,16 @@ namespace MyLove.ViewModels
         private MainWindowViewModel mainWindowViewModel;
         private NewModel newModel;
         private Era newEra;
+        private string picturePath;
 
         public Era NewEra { get => newEra; set => Set(ref newEra, value); }
+        public IEnumerable<string> Categories { get; set; }
         public NewViewModel(MainWindowViewModel mainWindowViewModel)
         {
             this.mainWindowViewModel = mainWindowViewModel;
             newModel = new NewModel();
             newEra = new Era();
+            Categories = mainWindowViewModel.Categories;
             AddEraCommand = new RelayCommand(OnAddEraCommandExecuted);
             AddPictureEraCommand = new RelayCommand(OnAddPictureEraCommandExecuted);
         }
@@ -46,16 +49,23 @@ namespace MyLove.ViewModels
             NewEra = new Era();
         }
         public ICommand AddPictureEraCommand { get; }
+        public string PicturePath { get => picturePath; set => Set(ref picturePath, value); }
+        private string selectedCategory;
+        public string SelectedCategory
+        {
+            get { return selectedCategory; }
+            set
+            {
+                Set(ref selectedCategory, value);
+                NewEra.Category = selectedCategory;
+            }
+        }
         private void OnAddPictureEraCommandExecuted(object o)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "Image files (*.BMP, *.JPG, *.GIF, *.TIF, *.PNG, *.ICO, *.EMF, *.WMF)|*.bmp;*.jpg;*.gif; *.tif; *.png; *.ico; *.emf; *.wmf";
             fileDialog.ShowDialog();
-            newEra.PicturePath = fileDialog.FileName;
-            if (newEra.PicturePath != null)
-            {
-                MessageBox.Show("The picture successfully added");
-            }
+            newEra.PicturePath = PicturePath = fileDialog.FileName;
         }
     }
 }

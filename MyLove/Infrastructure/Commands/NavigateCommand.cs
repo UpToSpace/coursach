@@ -55,6 +55,7 @@ namespace MyLove.Infrastructure.Commands
 				case "Logout":
 					viewModel.User = null;
 					viewModel.Admin = null;
+					viewModel.Role = Roles.Roles.Guest;
 					viewModel.CurrentViewModel = new LoginViewModel(viewModel);
 					break;
 				case "Feedbacks":

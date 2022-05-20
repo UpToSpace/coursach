@@ -23,4 +23,8 @@
     <v:String x:Key="Go">Вперед</v:String>
     <v:String x:Key="Add">Добавить</v:String>
     <v:String x:Key="TheBest">Лучшая историческая энциклопедия в мире!</v:String>
+    <v:String x:Key="CreateNewEra">СОЗДАЙТЕ НОВУЮ ЭРУ</v:String>
+    <v:String x:Key="AddPicture">Добавить картинку</v:String>
+    <v:String x:Key="Name">Название</v:String>
+    <v:String x:Key="Description">Описание</v:String>
 </ResourceDictionary>

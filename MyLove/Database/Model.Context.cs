@@ -19,7 +19,13 @@ namespace MyLove.Database
             : base("name=coursachEntities")
         {
         }
+
         private static coursachEntities context;
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            throw new UnintentionalCodeFirstException();
+        }
 
         public static coursachEntities GetContext()
         {
@@ -30,11 +36,6 @@ namespace MyLove.Database
             return context;
         }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            throw new UnintentionalCodeFirstException();
-        }
-    
         public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<Era> Era { get; set; }
         public virtual DbSet<Feedback> Feedback { get; set; }

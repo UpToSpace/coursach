@@ -27,6 +27,7 @@ namespace MyLove.ViewModels
             loginModel = new LoginModel();
             this.mainWindowViewModel = mainWindowViewModel;
             mainWindowViewModel.User = null;
+            mainWindowViewModel.Role = Infrastructure.Roles.Roles.Guest;
             GoToRegistrationCommand = new NavigateCommand(this.mainWindowViewModel);
             GoToProfileCommand = new NavigateCommand(this.mainWindowViewModel);
             CheckDataCommand = new RelayCommand(OnCheckDataCommandExecuted);
@@ -43,6 +44,7 @@ namespace MyLove.ViewModels
                 if (Username == item.Name && Password == item.Password)
                 {
                     mainWindowViewModel.Admin = item;
+                    mainWindowViewModel.Role = Infrastructure.Roles.Roles.Admin;
                     GoToProfileCommand.Execute("UserProfile");
                     return;
                 }
@@ -63,6 +65,7 @@ namespace MyLove.ViewModels
                 if (Username == item.Username && user.Password == item.Password)
                 {
                     mainWindowViewModel.User = item;
+                    mainWindowViewModel.Role = Infrastructure.Roles.Roles.User;
                     GoToProfileCommand.Execute("UserProfile");
                     return;
                 }

@@ -14,8 +14,9 @@
     <Property Name="Id" Type="Int32" Nullable="false" />
     <Property Name="PicturePath" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
     <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="ShortDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="ShortDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
+    <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Travel" Relationship="Self.FK__Travel__EraId__3D5E1FD2" FromRole="Era" ToRole="Travel" />
   </EntityType>
   <EntityType Name="Feedback">
@@ -24,7 +25,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" />
     <Property Name="Username" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="User_" Relationship="Self.FK__Feedback__Userna__403A8C7D" FromRole="Feedback" ToRole="User_" />
   </EntityType>
   <EntityType Name="Travel">

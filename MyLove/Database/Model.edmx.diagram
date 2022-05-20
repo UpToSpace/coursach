@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ea9b02942cda4582aece357b0eb2d8e6" Name="Diagram1">
+      <Diagram DiagramId="5f286dba922f4137a211b242ae7b6ea7" Name="Diagram1">
         <EntityTypeShape EntityType="coursachModel.Admin" Width="1.5" PointX="5.75" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="coursachModel.Era" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="coursachModel.Era" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
         <EntityTypeShape EntityType="coursachModel.Feedback" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="coursachModel.Travel" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="coursachModel.User_" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />

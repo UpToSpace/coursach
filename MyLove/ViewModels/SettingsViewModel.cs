@@ -31,10 +31,16 @@ namespace MyLove.ViewModels
             switch (theme)
             {
                 case "Light":
-                    Application.Current.Resources.MergedDictionaries[1].Source = new Uri("./Views/Themes/LightTheme.xaml", UriKind.RelativeOrAbsolute);
+                    if (Application.Current.Resources.MergedDictionaries[1].Source != new Uri("./Views/Themes/LightTheme.xaml", UriKind.RelativeOrAbsolute))
+                    {
+                        Application.Current.Resources.MergedDictionaries[1].Source = new Uri("./Views/Themes/LightTheme.xaml", UriKind.RelativeOrAbsolute);
+                    }
                     break;
                 case "Dark":
-                    Application.Current.Resources.MergedDictionaries[1].Source = new Uri("./Views/Themes/DarkTheme.xaml", UriKind.RelativeOrAbsolute);
+                    if (Application.Current.Resources.MergedDictionaries[1].Source != new Uri("./Views/Themes/DarkTheme.xaml", UriKind.RelativeOrAbsolute))
+                    {
+                        Application.Current.Resources.MergedDictionaries[1].Source = new Uri("./Views/Themes/DarkTheme.xaml", UriKind.RelativeOrAbsolute);
+                    }
                     break;
                 default:
                     break;

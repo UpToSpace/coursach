@@ -19,8 +19,9 @@
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="PicturePath" Type="varchar" MaxLength="300" />
           <Property Name="Name" Type="varchar" MaxLength="100" />
-          <Property Name="ShortDescription" Type="varchar" MaxLength="100" />
-          <Property Name="Description" Type="varchar" MaxLength="1000" />
+          <Property Name="ShortDescription" Type="varchar" MaxLength="200" />
+          <Property Name="Description" Type="varchar" MaxLength="1500" />
+          <Property Name="Category" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Feedback">
           <Key>
@@ -28,7 +29,7 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Username" Type="varchar" MaxLength="40" />
-          <Property Name="Description" Type="varchar" MaxLength="1000" />
+          <Property Name="Description" Type="varchar" MaxLength="400" />
         </EntityType>
         <EntityType Name="Travel">
           <Key>
@@ -119,8 +120,9 @@
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="PicturePath" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="ShortDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ShortDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
+          <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Travel" Relationship="Self.FK__Travel__EraId__3D5E1FD2" FromRole="Era" ToRole="Travel" />
         </EntityType>
         <EntityType Name="Feedback">
@@ -129,7 +131,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Username" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="User_" Relationship="Self.FK__Feedback__Userna__403A8C7D" FromRole="Feedback" ToRole="User_" />
         </EntityType>
         <EntityType Name="Travel">
@@ -228,6 +230,7 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -57,6 +57,7 @@ namespace MyLove.ViewModels
             MD5 passwordHasher = MD5.Create();
             user.Password = Convert.ToBase64String(passwordHasher.ComputeHash(Encoding.UTF8.GetBytes(Password)));
             mainWindowViewModel.User = user;
+            mainWindowViewModel.Role = Infrastructure.Roles.Roles.User;
             registrationModel.AddUser(user);
             GoToProfileCommand.Execute("UserProfile");
         }

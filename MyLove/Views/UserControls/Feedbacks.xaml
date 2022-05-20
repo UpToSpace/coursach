@@ -10,7 +10,7 @@
              FontFamily="{StaticResource Philosopher}">
     <Grid>
         <Grid.Resources>
-            <conv:IsUserConverter x:Key="IsUserConverter" />
+            <conv:RoleConverter x:Key="RoleConverter" />
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*" />
@@ -57,7 +57,7 @@
             Width="Auto"
             VerticalAlignment="Stretch"
             Height="Auto"
-            Visibility="{Binding User, Converter={StaticResource IsUserConverter}}"
+            Visibility="{Binding Role, Converter={StaticResource RoleConverter}}"
             Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"
             />
             <Button
@@ -69,7 +69,7 @@
                 Margin="0 20"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                Visibility="{Binding User, Converter={StaticResource IsUserConverter}}"
+                Visibility="{Binding Role, Converter={StaticResource RoleConverter}}"
                 Command="{Binding AddFeedbackCommand}"
             />
         </Grid>    

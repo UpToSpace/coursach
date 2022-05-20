@@ -14,8 +14,9 @@
     <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="PicturePath" Type="varchar" MaxLength="300" />
     <Property Name="Name" Type="varchar" MaxLength="100" />
-    <Property Name="ShortDescription" Type="varchar" MaxLength="100" />
-    <Property Name="Description" Type="varchar" MaxLength="1000" />
+    <Property Name="ShortDescription" Type="varchar" MaxLength="200" />
+    <Property Name="Description" Type="varchar" MaxLength="1500" />
+    <Property Name="Category" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Feedback">
     <Key>
@@ -23,7 +24,7 @@
     </Key>
     <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="Username" Type="varchar" MaxLength="40" />
-    <Property Name="Description" Type="varchar" MaxLength="1000" />
+    <Property Name="Description" Type="varchar" MaxLength="400" />
   </EntityType>
   <EntityType Name="Travel">
     <Key>

@@ -20,9 +20,12 @@ namespace MyLove.Models
 
         public void AddUserTravel(Travel travel)
         {
-            travel.Id = Travels.Count() == 0 ? 1 : Travels.ToList().Last().Id + 1;
-            Travels.Add(travel);
-            coursachEntities.GetContext().SaveChanges();
+            if (!Travels.Where(e => e.Username == travel.Username && e.EraId == travel.EraId).Any())
+            {
+                travel.Id = Travels.Count() == 0 ? 1 : Travels.ToList().Last().Id + 1;
+                Travels.Add(travel);
+                coursachEntities.GetContext().SaveChanges();
+            }
         }
     }
 }

@@ -20,28 +20,29 @@
                 HorizontalAlignment="Stretch"
                 Background="#726CCD"
                 >
-                <Grid>
-
+                <Grid
+                    Margin="7">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                         <RowDefinition Height="8*" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="30*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <TextBlock
                         Grid.Row="0"
+                        Grid.Column="1"
                         FontSize="14"
-                   Margin="10 10 10 0"
                         TextWrapping="Wrap"
                        HorizontalAlignment="Left"
                        VerticalAlignment="Bottom"
                             Text="{Binding Username, StringFormat='User: {0}'}"/>
                     <TextBlock
                         Grid.Row="1"
-                   Margin="10"
+                        Grid.Column="1"
+                        HorizontalAlignment="Left"
                         FontSize="14"
                             Text="{Binding Description}"
                             TextWrapping="Wrap"/>
