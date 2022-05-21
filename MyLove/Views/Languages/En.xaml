@@ -32,7 +32,6 @@
     <v:String x:Key="ProsentOfRead">Prosent of read</v:String>
     <v:String x:Key="Status">Status</v:String>
     <v:String x:Key="LOGOUT">LOG OUT</v:String>
-    <!--the last-->
-    <!--<v:String x:Key="Or">or</v:String>
-    <v:String x:Key="Or">or</v:String>-->
+    <v:String x:Key="ClearFilter">Clear Filter</v:String>
+    <!--<v:String x:Key="Or">or</v:String>-->
 </ResourceDictionary>

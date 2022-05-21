@@ -32,4 +32,5 @@
     <v:String x:Key="ProsentOfRead">Процент прочитанного</v:String>
     <v:String x:Key="Status">Статус</v:String>
     <v:String x:Key="LOGOUT">ВЫЙТИ</v:String>
+    <v:String x:Key="ClearFilter">Очистить фильтр</v:String>
 </ResourceDictionary>

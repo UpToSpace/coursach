@@ -52,7 +52,7 @@
             Grid.Row="2"
             VerticalAlignment="Bottom"
             Command="{Binding ClearFilterCommand}"
-            Content="Clear Filter"
+            Content="{DynamicResource ClearFilter}"
             Height="50"
             FontSize="14"
             Margin="10"
