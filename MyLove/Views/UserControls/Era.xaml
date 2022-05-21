@@ -15,19 +15,23 @@
         </Grid.RowDefinitions>
         <ScrollViewer 
             Grid.Row="1"
-            Margin="10"
+            Margin="20"
             VerticalScrollBarVisibility="Auto">
             <StackPanel Orientation="Vertical">
                 <Image
                     Source="{Binding Era.PicturePath}"
-                    Margin="12 12 12 0"
-                    Height="400"/>
+                    Margin="12"
+                    Height="200"/>
                 <TextBlock
+                    Margin="10"
                     Text="{Binding Era.Name}" />
                 <TextBlock
                     Text="{Binding Era.Description}"
-                    TextWrapping="Wrap"/>
+                    TextWrapping="Wrap"
+                    Margin="10"/>
                 <Button
+                    Margin="10"
+                    FontSize="26"
                     Content="{DynamicResource ToCatalog}"
                     Command="{Binding ShowCatalogCommand}" />
             </StackPanel>

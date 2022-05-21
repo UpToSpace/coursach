@@ -57,6 +57,15 @@
                    Margin="12 0 2 0"
                             Text="{Binding Era.ShortDescription, UpdateSourceTrigger=PropertyChanged}"/>
                     </Viewbox>
+                    <Viewbox
+                        Grid.Row="3"
+                                Height="20"
+                        HorizontalAlignment="Left">
+                        <TextBlock
+                   Foreground="#fff"
+                   Margin="12 0 2 0"
+                            Text="{Binding Era.Category, UpdateSourceTrigger=PropertyChanged}"/>
+                    </Viewbox>
                 </Grid>
             </Grid>
         </Grid>

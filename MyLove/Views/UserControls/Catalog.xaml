@@ -32,7 +32,7 @@
             Width="300"
                     Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
                    />
-        <Image Source="D:\University\4\oop\laba6_7\laba6_7\icons\search.png" 
+            <Image Source="D:\University\coursach\MyLove\MyLove\DesignElements\Icons\search.png" 
             HorizontalAlignment="Right"
                 VerticalAlignment="Center" 
                    Height="17"

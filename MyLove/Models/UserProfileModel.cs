@@ -11,9 +11,6 @@ namespace MyLove.Models
 {
     class UserProfileModel
     {
-        //private DbSet<Era> eras;
-        //public DbSet<Era> Eras { get => eras; set => eras = value; }
-
         private IEnumerable<Travel> travels;
         public UserProfileModel(ViewModel mainViewModel)
         {
@@ -21,7 +18,7 @@ namespace MyLove.Models
         }
         public int GetErasCount(User_ user)
         {
-            return coursachEntities.GetContext().Set<Travel>().Count();
+            return coursachEntities.GetContext().Set<Era>().Count();
         }
         public List<Travel> GetTravels(User_ user)
         {

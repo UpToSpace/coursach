@@ -64,7 +64,7 @@
                     <RowDefinition Height="5*" />
                     <RowDefinition Height="6*" />
                 </Grid.RowDefinitions>
-            <Grid>
+            <Grid Margin="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2*" />
                     <RowDefinition Height="*" />
@@ -93,6 +93,7 @@
                 Grid.Column="0"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
+                    TextDecorations="Underline"
                 Text="{Binding FavouriteCategory}" />
 
                 <TextBlock
@@ -108,7 +109,7 @@
                 Stretch="None"
                 ArcThickness="10"
                 ArcThicknessUnit="Pixel"
-                Fill="Black"
+                Fill="#FF3F3F3F"
                 EndAngle="360"/>
                 <ed:Arc 
                 Grid.Row="2"
@@ -118,7 +119,7 @@
                 Stretch="None"
                 ArcThickness="10"
                 ArcThicknessUnit="Pixel"
-                Fill="Red"
+                Fill="#726CCD"
                 EndAngle="{Binding TravelValue, Converter={StaticResource AngleConverter}}"/>
                 <TextBlock
                 Grid.Row="2"
