@@ -11,14 +11,17 @@ namespace MyLove.Models
 {
     class UserProfileModel
     {
-        private DbSet<Era> eras;
-        public DbSet<Era> Eras { get => eras; set => eras = value; }
-        //public IEnumerable<Travel> Travels { get; set; }
+        //private DbSet<Era> eras;
+        //public DbSet<Era> Eras { get => eras; set => eras = value; }
 
         private IEnumerable<Travel> travels;
         public UserProfileModel(ViewModel mainViewModel)
         {
             travels = coursachEntities.GetContext().Set<Travel>();
+        }
+        public int GetErasCount(User_ user)
+        {
+            return coursachEntities.GetContext().Set<Travel>().Count();
         }
         public List<Travel> GetTravels(User_ user)
         {

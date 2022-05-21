@@ -18,7 +18,6 @@
         </Grid.RowDefinitions>
 
         <ScrollViewer
-            Margin="0 10"
             Grid.Row="0"
             VerticalScrollBarVisibility="Auto">
             <ItemsControl 
@@ -27,6 +26,7 @@
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel ItemWidth="250" 
+                                   ItemHeight="300"
                                    HorizontalAlignment="Center" 
                        Orientation="Horizontal"/>
                     </ItemsPanelTemplate>

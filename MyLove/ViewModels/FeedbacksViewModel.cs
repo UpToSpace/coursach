@@ -40,7 +40,7 @@ namespace MyLove.ViewModels
 
         private void OnAddFeedbackCommandExecuted(object o)
         {
-            if (Description.Length > 390)
+            if (Description.Length > 250)
             {
                 MessageBox.Show("The length of the comment is too long");
                 return;

@@ -31,7 +31,7 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="50" />
                     </Grid.RowDefinitions>
                     <Image
                         Grid.Row="0"

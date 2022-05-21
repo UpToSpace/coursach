@@ -41,6 +41,8 @@ namespace MyLove.ViewModels
             Admin = mainWindowViewModel.Admin;
             Categories = mainWindowViewModel.Categories;
             Role = mainWindowViewModel.Role;
+            searchText = "";
+            selectedCategory = "";
         }
         public ICommand GoToEraPageCommand { get; }
         public ICommand ShowEraCommand { get; }
@@ -55,7 +57,7 @@ namespace MyLove.ViewModels
             set
             {
                 Set(ref searchText, value);
-                Eras = new ObservableCollection<Era>(catalogModel.Eras.Where(e => e.Name.Contains(SearchText)));
+                Eras = new ObservableCollection<Era>(catalogModel.Eras.Where(e => e.Name.Contains(SearchText) && e.Category.Contains(selectedCategory)));
             }
         }
 
@@ -66,7 +68,7 @@ namespace MyLove.ViewModels
             set
             {
                 Set(ref selectedCategory, value);
-                Eras = new ObservableCollection<Era>(catalogModel.Eras.Where(e => e.Category.Contains(selectedCategory)));
+                Eras = new ObservableCollection<Era>(catalogModel.Eras.Where(e => e.Category.Contains(selectedCategory) && e.Name.Contains(SearchText)));
             }
         }
         public Admin Admin { get => admin; set => admin = value; }
@@ -85,6 +87,8 @@ namespace MyLove.ViewModels
         private void OnClearFilterCommandExecuted(object o)
         {
             SelectedCategory = null;
+            SelectedCategory = "";
+            SearchText = "";
             Eras = new ObservableCollection<Era>(catalogModel.Eras);
         }
     }

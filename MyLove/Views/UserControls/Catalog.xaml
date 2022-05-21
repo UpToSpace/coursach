@@ -70,7 +70,7 @@
                           >
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <WrapPanel ItemWidth="300"
+                        <WrapPanel ItemWidth="300" ItemHeight="350"
                             HorizontalAlignment="Center" 
                        Orientation="Horizontal"/>
                     </ItemsPanelTemplate>

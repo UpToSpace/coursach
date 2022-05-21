@@ -27,4 +27,9 @@
     <v:String x:Key="AddPicture">Добавить картинку</v:String>
     <v:String x:Key="Name">Название</v:String>
     <v:String x:Key="Description">Описание</v:String>
+    <v:String x:Key="Statistics">Статистика</v:String>
+    <v:String x:Key="FavouriteCategory">Любимая категория</v:String>
+    <v:String x:Key="ProsentOfRead">Процент прочитанного</v:String>
+    <v:String x:Key="Status">Статус</v:String>
+    <v:String x:Key="LOGOUT">ВЫЙТИ</v:String>
 </ResourceDictionary>

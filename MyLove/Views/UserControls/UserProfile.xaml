@@ -4,16 +4,20 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MyLove.Views.UserControls"
+             xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+             xmlns:conv="clr-namespace:MyLove.Infrastructure.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="800"
              FontFamily="{StaticResource Philosopher}">
+    <UserControl.Resources>
+        <conv:AngleConverter x:Key="AngleConverter" />
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="0.2*" />
-            <RowDefinition Height="5*" />
-            <RowDefinition Height="6*" />
+            <RowDefinition Height="11*" />
             <RowDefinition Height="0.2*" />
         </Grid.RowDefinitions>
         
@@ -41,21 +45,113 @@
             <Button 
                 DockPanel.Dock="Right"
                 HorizontalAlignment="Right"
-                FontSize="24"
-                Content="LOG OUT" 
+                Height="auto"
+                FontSize="18"
+                Width="100"
+                Content="{DynamicResource LOGOUT}" 
                 Command="{Binding GoToLoginPageCommand}"
                 CommandParameter="Logout"
                 />
         </DockPanel>
+
+
+
         <ScrollViewer
             Grid.Row="3"
             VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*" />
+                    <RowDefinition Height="6*" />
+                </Grid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="10*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Text="{DynamicResource Statistics}"
+                FontSize="20"/>
+
+                <TextBlock
+                Grid.Row="1"
+                Grid.Column="0"
+                Text="{DynamicResource FavouriteCategory}" />
+
+                <TextBlock
+                Grid.Row="2"
+                Grid.Column="0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                Text="{Binding FavouriteCategory}" />
+
+                <TextBlock
+                Grid.Row="1"
+                Grid.Column="1"
+                Text="{DynamicResource ProsentOfRead}" />
+
+                <ed:Arc 
+                Grid.Row="2"
+                Grid.Column="1"
+                Height="100"
+                Width="100"
+                Stretch="None"
+                ArcThickness="10"
+                ArcThicknessUnit="Pixel"
+                Fill="Black"
+                EndAngle="360"/>
+                <ed:Arc 
+                Grid.Row="2"
+                Grid.Column="1"
+                Height="100"
+                Width="100"
+                Stretch="None"
+                ArcThickness="10"
+                ArcThicknessUnit="Pixel"
+                Fill="Red"
+                EndAngle="{Binding TravelValue, Converter={StaticResource AngleConverter}}"/>
+                <TextBlock
+                Grid.Row="2"
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Text="{Binding StringFormat={}{0}%, Path=TravelValue}" />
+
+                <TextBlock
+                Grid.Row="1"
+                Grid.Column="2"
+                Text="{DynamicResource Status}" />
+                <StackPanel
+                Grid.Column="2"
+                Grid.Row="2">
+                    <Image
+                        Margin="10"
+                        Height="100"
+                        Source="{Binding ImagePath}"
+                         />
+                    <TextBlock
+                        Text="{Binding Status}" />
+                </StackPanel>
+            </Grid>
+
             <ItemsControl 
                 ItemsSource="{Binding Travels}"
+                Grid.Row="1"
                           >
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel ItemWidth="300" 
+                                   ItemHeight="250"
                        Orientation="Horizontal"/>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
@@ -68,6 +164,7 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
+            </Grid>
         </ScrollViewer>
     </Grid>
 </UserControl>

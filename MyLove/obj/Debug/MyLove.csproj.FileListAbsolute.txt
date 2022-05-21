@@ -108,3 +108,4 @@ D:\University\coursach\MyLove\MyLove\obj\Debug\Views\UserControls\Settings.g.cs
 D:\University\coursach\MyLove\MyLove\obj\Debug\Views\UserControls\Main.baml
 D:\University\coursach\MyLove\MyLove\obj\Debug\Views\UserControls\New.baml
 D:\University\coursach\MyLove\MyLove\obj\Debug\Views\UserControls\Settings.baml
+D:\University\coursach\MyLove\MyLove\bin\Debug\Microsoft.Expression.Drawing.dll
