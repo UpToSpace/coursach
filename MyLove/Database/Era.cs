@@ -30,6 +30,7 @@ namespace MyLove.Database
         public string ShortDescription { get; set; }
         [Required, MaxLength(1500)]
         public string Description { get; set; }
+        [Required]
         public string Category { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

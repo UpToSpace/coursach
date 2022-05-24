@@ -55,6 +55,7 @@
                         Text="{DynamicResource Name}" />
         <TextBox Grid.Column="1"
                         Grid.Row="3"
+                 MaxLength="70"
                  HorizontalAlignment="Stretch"
                         Text="{Binding NewEra.Name, UpdateSourceTrigger=PropertyChanged}"
                         />
@@ -67,6 +68,7 @@
         <TextBox
                         Grid.Column="1"
                         Grid.Row="5"
+            MaxLength="70"
             HorizontalAlignment="Stretch"
                         Text="{Binding NewEra.ShortDescription, UpdateSourceTrigger=PropertyChanged}"
                         />
@@ -77,6 +79,7 @@
             HorizontalAlignment="Stretch"
                         TextWrapping="Wrap" 
                         Height="Auto"
+            MaxLength="1490"
             Text="{Binding NewEra.Description, UpdateSourceTrigger=PropertyChanged}"
                         />
         <ComboBox

@@ -47,6 +47,7 @@
             <uc:Settings />
         </DataTemplate>
         <conv:RoleConverter x:Key="RoleConverter" />
+        <conv:IsAdminConverter x:Key="IsAdminConverter" />
     </Window.Resources>
     
     <Grid>
@@ -81,7 +82,7 @@
                 Command="{Binding GoToPageCommand}"
                 CommandParameter="Catalog"/>
             <RadioButton
-                Visibility="{Binding Role, Converter={StaticResource RoleConverter}}"
+                Visibility="{Binding Admin, Converter={StaticResource IsAdminConverter}}"
                 FontFamily="{StaticResource Philosopher}"
                 Style="{DynamicResource RadioButton}"
                 Content="{DynamicResource New}"

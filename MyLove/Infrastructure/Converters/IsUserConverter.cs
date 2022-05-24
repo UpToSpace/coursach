@@ -13,11 +13,11 @@ namespace MyLove.Infrastructure.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value == null)
+            if (value is Roles.Roles.User)
             {
-                return Visibility.Collapsed;
+                return Visibility.Visible;
             }
-            return Visibility.Visible;
+            return Visibility.Collapsed;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

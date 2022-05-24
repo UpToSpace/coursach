@@ -30,7 +30,6 @@ namespace MyLove.ViewModels
         public ICommand GoToCatalogPageCommand { get; }
         public ICommand ShowCatalogCommand { get; }
 
-
         private void OnShowCatalogCommandExecuted(object o)
         {
             if (mainWindowViewModel.User != null)

@@ -283,6 +283,7 @@
     <Compile Include="Infrastructure\Commands\RelayCommand.cs" />
     <Compile Include="Infrastructure\Converters\AngleConverter.cs" />
     <Compile Include="Infrastructure\Converters\IsAdminConverter.cs" />
+    <Compile Include="Infrastructure\Converters\IsUserConverter.cs" />
     <Compile Include="Infrastructure\Converters\RoleConverter.cs" />
     <Compile Include="Infrastructure\Roles\Roles.cs" />
     <Compile Include="Infrastructure\Validator\Validator.cs" />
@@ -290,7 +291,6 @@
     <Compile Include="Models\EraModel.cs" />
     <Compile Include="Models\FeedbacksModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
-    <Compile Include="Models\MainWindowModel.cs" />
     <Compile Include="Models\NewModel.cs" />
     <Compile Include="Models\RegistrationModel.cs" />
     <Compile Include="Models\UserProfileModel.cs" />
@@ -359,6 +359,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Database\Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </None>

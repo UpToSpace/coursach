@@ -35,9 +35,11 @@ namespace MyLove.ViewModels
            User = mainWindowViewModel.User;
            Admin = mainWindowViewModel.Admin;
            Travels = userProfileModel.GetTravels(User).ToList();
-            travelValue = !(mainWindowViewModel.Admin is null) ? 100 : Travels.Count() == 0 ? 0 : (int)(Convert.ToDouble(Travels.Count()) / Convert.ToDouble(userProfileModel.GetErasCount(User)) * 100);
+            travelValue = !(mainWindowViewModel.Admin is null) ? 100 : Travels.Count() == 0 ? 0 
+                : (int)(Convert.ToDouble(Travels.Count()) / Convert.ToDouble(userProfileModel.GetErasCount(User)) * 100);
             imagePath = GetImage();
-            favouriteCategory = !(mainWindowViewModel.Admin is null) ? "Все, ты ж админ" : Travels.Count() == 0 ? "У вас нет прочитанного" : Travels.GroupBy(e => e.Era.Category).OrderByDescending(e => e.Count()).Select(e => e.Key).First();
+            favouriteCategory = !(mainWindowViewModel.Admin is null) ? "Все, ты ж админ" : Travels.Count() == 0 ?
+                "У вас нет прочитанного" : Travels.GroupBy(e => e.Era.Category).OrderByDescending(e => e.Count()).Select(e => e.Key).First();
         }
 
         public ICommand GoToLoginPageCommand { get; }

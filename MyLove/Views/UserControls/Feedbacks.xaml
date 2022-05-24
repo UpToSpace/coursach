@@ -10,7 +10,7 @@
              FontFamily="{StaticResource Philosopher}">
     <Grid>
         <Grid.Resources>
-            <conv:RoleConverter x:Key="RoleConverter" />
+            <conv:IsUserConverter x:Key="RoleConverter" />
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*" />

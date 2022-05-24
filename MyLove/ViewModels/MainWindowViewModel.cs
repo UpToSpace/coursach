@@ -15,7 +15,6 @@ namespace MyLove.ViewModels
 {
     internal class MainWindowViewModel : ViewModel
     {
-        private MainWindowModel mainWindowModel;
         private User_ user;
         private Admin admin;
         private Era era;
@@ -43,7 +42,6 @@ namespace MyLove.ViewModels
 
         public MainWindowViewModel()
         {
-            mainWindowModel = new MainWindowModel();
             CurrentViewModel = new MainViewModel(this);
             GoToPageCommand = new NavigateCommand(this);
             FullScreenApplicationCommand = new RelayCommand(OnFullScreenApplicationCommandExecuted);

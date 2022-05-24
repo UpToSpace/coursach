@@ -26,7 +26,7 @@ namespace MyLove.Database
         public string Username { get; set; }
 
 
-        [Required, RegularExpression("^[A-Za-z0-9]{5,10}$", ErrorMessage = "The password must be 6-10 characters long and contain only numbers and letters")]
+        [Required, RegularExpression("^[A-Za-z0-9]{5,10}$", ErrorMessage = "The password must be 5-10 characters long and contain only numbers and letters")]
         public string Password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

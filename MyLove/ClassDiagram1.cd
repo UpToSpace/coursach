@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MyLove.ViewModels.CatalogViewModel" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACABAAAAIiAICAAAUAAIAUQAAAEUMAAAAAAgAAAAAQA=</HashCode>
+      <FileName>ViewModels\CatalogViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyLove.ViewModels.EraViewModel" Collapsed="true">
+    <Position X="0.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAIAAAAAAAAIAAAAAAACAAAABgAAAAAAIAAAAA=</HashCode>
+      <FileName>ViewModels\EraViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyLove.ViewModels.FeedbacksViewModel" Collapsed="true">
+    <Position X="2.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AKABQAAAAAEgAAIAMAACAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>ViewModels\FeedbacksViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyLove.ViewModels.LoginViewModel" Collapsed="true">
+    <Position X="2.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAgAIABAAABAAQAAAIEAAAAAAAACAAAAAgAAAAA=</HashCode>
+      <FileName>ViewModels\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyLove.ViewModels.MainViewModel" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyLove.ViewModels.MainWindowViewModel" Collapsed="true">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAEIAEgBAAQAQCAEAEAkAAAAAAEAQAQA=</HashCode>
+      <FileName>ViewModels\MainWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyLove.ViewModels.NewViewModel" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAABAIAACCSAAAAAAAAAAAAAAEQAYAIAgAAAAAAA=</HashCode>
+      <FileName>ViewModels\NewViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyLove.ViewModels.RegistrationViewModel" Collapsed="true">
+    <Position X="2.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAIQBAAABAAQAAAAEAAAAAAAACAAAAAgAAACA=</HashCode>
+      <FileName>ViewModels\RegistrationViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyLove.ViewModels.SettingsViewModel" Collapsed="true">
+    <Position X="2.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAgAAAAAAIAAAAAAAACAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>ViewModels\SettingsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyLove.ViewModels.UserProfileViewModel" Collapsed="true">
+    <Position X="2.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQFAAAEAQCAAAAAgCAAAYAwAAEAAAAAAAAAAAAABQA=</HashCode>
+      <FileName>ViewModels\UserProfileViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyLove.Models.CatalogModel" Collapsed="true">
+    <Position X="4.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAQAAAAEAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Models\CatalogModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyLove.Models.EraModel" Collapsed="true">
+    <Position X="4.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Models\EraModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyLove.Models.FeedbacksModel" Collapsed="true">
+    <Position X="4.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\FeedbacksModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyLove.Models.LoginModel" Collapsed="true">
+    <Position X="4.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAACAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\LoginModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyLove.Models.NewModel" Collapsed="true">
+    <Position X="4.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Models\NewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyLove.Models.RegistrationModel" Collapsed="true">
+    <Position X="4.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAACAAAAAAAAAAAAAAAQAAAAEAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Models\RegistrationModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyLove.Models.UserProfileModel" Collapsed="true">
+    <Position X="4.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEEAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\UserProfileModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyLove.ViewModels.Base.ViewModel" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Base\ViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MyLove.Infrastructure.Commands.Base.Command" Collapsed="true">
+    <Position X="8" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Commands\Base\Command.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MyLove.Infrastructure.Commands.NavigateCommand" Collapsed="true">
+    <Position X="6.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAEAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Commands\NavigateCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyLove.Infrastructure.Commands.RelayCommand" Collapsed="true">
+    <Position X="9" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAEAEAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Commands\RelayCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyLove.Infrastructure.Converters.AngleConverter">
+    <Position X="14" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Converters\AngleConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MyLove.Infrastructure.Converters.IsAdminConverter">
+    <Position X="16.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Converters\IsAdminConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MyLove.Infrastructure.Converters.IsUserConverter">
+    <Position X="12" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Converters\IsUserConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MyLove.Infrastructure.Converters.RoleConverter">
+    <Position X="12" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Converters\RoleConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MyLove.Infrastructure.Validator.Validator">
+    <Position X="9.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Validator\Validator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

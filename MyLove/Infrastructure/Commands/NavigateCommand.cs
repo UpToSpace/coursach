@@ -10,22 +10,20 @@ using System.Windows.Input;
 
 namespace MyLove.Infrastructure.Commands
 {
-	class NavigateCommand : ICommand
+	class NavigateCommand : Command
 	{
-		public event EventHandler CanExecuteChanged;
-
 		private MainWindowViewModel viewModel;
 		public NavigateCommand(MainWindowViewModel viewModel)
 		{
 			this.viewModel = viewModel;
 		}
 
-		public bool CanExecute(object parameter) => true;
+		public override bool CanExecute(object parameter) => true;
 
-		public void Execute(object parameter)
-		{
-			switch(parameter as string)
-            {
+        public override void Execute(object parameter)
+        {
+			switch (parameter as string)
+			{
 				case "Main":
 					viewModel.CurrentViewModel = new MainViewModel(viewModel);
 					break;
@@ -40,10 +38,10 @@ namespace MyLove.Infrastructure.Commands
 					break;
 				case "Login":
 					if (viewModel.User == null && viewModel.Admin == null)
-                    {
+					{
 						viewModel.CurrentViewModel = new LoginViewModel(viewModel);
 						break;
-                    }
+					}
 					viewModel.CurrentViewModel = new UserProfileViewModel(viewModel);
 					break;
 				case "Registration":
@@ -64,9 +62,9 @@ namespace MyLove.Infrastructure.Commands
 				case "Settings":
 					viewModel.CurrentViewModel = new SettingsViewModel(viewModel);
 					break;
-                default:
-                    break;
-            }
+				default:
+					break;
+			}
 		}
-	}
+    }
 }
