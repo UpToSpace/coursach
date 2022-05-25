@@ -7,8 +7,8 @@
       <FileName>ViewModels\CatalogViewModel.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MyLove.ViewModels.EraViewModel" Collapsed="true">
-    <Position X="0.75" Y="2" Width="1.5" />
+  <Class Name="MyLove.ViewModels.EraViewModel">
+    <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAIAAAAAAAAIAAAAAAACAAAABgAAAAAAIAAAAA=</HashCode>
       <FileName>ViewModels\EraViewModel.cs</FileName>
@@ -28,7 +28,7 @@
       <FileName>ViewModels\LoginViewModel.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MyLove.ViewModels.MainViewModel" Collapsed="true">
+  <Class Name="MyLove.ViewModels.MainViewModel">
     <Position X="0.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
@@ -70,7 +70,7 @@
       <FileName>ViewModels\UserProfileViewModel.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MyLove.Models.CatalogModel" Collapsed="true">
+  <Class Name="MyLove.Models.CatalogModel">
     <Position X="4.25" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEAAAAAAAAAAAAQAAAAEAAAAAAAAAAAgAAAAAAAAA=</HashCode>
@@ -78,42 +78,42 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MyLove.Models.EraModel" Collapsed="true">
-    <Position X="4.25" Y="2.75" Width="1.5" />
+    <Position X="4.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
       <FileName>Models\EraModel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyLove.Models.FeedbacksModel" Collapsed="true">
-    <Position X="4.25" Y="3.5" Width="1.5" />
+    <Position X="4.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAAAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\FeedbacksModel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyLove.Models.LoginModel" Collapsed="true">
-    <Position X="4.25" Y="4.25" Width="1.5" />
+    <Position X="4.25" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAAAACAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\LoginModel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyLove.Models.NewModel" Collapsed="true">
-    <Position X="4.25" Y="5" Width="1.5" />
+    <Position X="4.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAgAAAAAAAAAAA=</HashCode>
       <FileName>Models\NewModel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyLove.Models.RegistrationModel" Collapsed="true">
-    <Position X="4.25" Y="6.5" Width="1.5" />
+    <Position X="4.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAAAACAAAAAAAAAAAAAAAQAAAAEAAAAgAAAAAAAAAAA=</HashCode>
       <FileName>Models\RegistrationModel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyLove.Models.UserProfileModel" Collapsed="true">
-    <Position X="4.25" Y="5.75" Width="1.5" />
+    <Position X="4.25" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEEAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\UserProfileModel.cs</FileName>
@@ -181,8 +181,8 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="MyLove.Infrastructure.Validator.Validator">
-    <Position X="9.25" Y="1.25" Width="1.5" />
+  <Class Name="MyLove.Infrastructure.Validator.Validator" Collapsed="true">
+    <Position X="10" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Infrastructure\Validator\Validator.cs</FileName>

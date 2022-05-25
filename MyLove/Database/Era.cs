@@ -24,11 +24,11 @@ namespace MyLove.Database
         public int Id { get; set; }
         [Required, MaxLength(300)]
         public string PicturePath { get; set; }
-        [Required, MaxLength(100)]
+        [Required, MaxLength(100), MinLength(3)]
         public string Name { get; set; }
-        [Required, MaxLength(100)]
+        [Required, MaxLength(100), MinLength(3)]
         public string ShortDescription { get; set; }
-        [Required, MaxLength(1500)]
+        [Required, MaxLength(1500), MinLength(100)]
         public string Description { get; set; }
         [Required]
         public string Category { get; set; }
